@@ -1,0 +1,115 @@
+.wwa-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.wwa-img-bg {
+  width: 50%;
+  max-height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (max-width: 1400px) {
+  .wwa-img-bg {
+    width: 100%;
+  }
+}
+
+.wwa-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-10%, -50%);
+          transform: translate(-10%, -50%);
+  background: #fff;
+  border-radius: 30px;
+  padding: 78px 89px;
+  width: 42%;
+}
+@media screen and (max-width: 1024px) {
+  .wwa-content {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    width: 80%;
+  }
+}
+@media screen and (max-width: 820px) {
+  .wwa-content {
+    padding: 40px 89px;
+  }
+}
+@media screen and (max-width: 412px) {
+  .wwa-content {
+    width: 90%;
+    padding: 15px 15px;
+  }
+}
+
+.wwa-heading {
+  font-family: "Yellowtail";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  color: #7eb693;
+}
+@media screen and (max-width: 412px) {
+  .wwa-heading {
+    font-size: 25px;
+    margin-bottom: 0;
+  }
+}
+
+.wwa-sub-heading {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 50px;
+  color: #274c5b;
+}
+@media screen and (max-width: 1024px) {
+  .wwa-sub-heading {
+    font-size: 38px;
+  }
+}
+@media screen and (max-width: 412px) {
+  .wwa-sub-heading {
+    font-size: 27px;
+    margin-bottom: 5px;
+    line-height: 28px;
+  }
+}
+
+.wwa-list {
+  list-style: none;
+  padding: 0;
+}
+
+.wwa-list li h3 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  color: #274c5b;
+}
+@media screen and (max-width: 412px) {
+  .wwa-list li h3 {
+    font-size: 20px;
+    margin-bottom: 0;
+  }
+}
+
+.wwa-list li p {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  color: #525c60;
+}
+@media screen and (max-width: 412px) {
+  .wwa-list li p {
+    font-size: 14px;
+    line-height: 17px;
+    margin-bottom: 5px;
+  }
+}
