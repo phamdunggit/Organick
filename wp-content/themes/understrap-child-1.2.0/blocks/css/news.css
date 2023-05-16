@@ -46,7 +46,7 @@
 }
 
 .news-heading {
-  width: 50%;
+  width: 50.1%;
 }
 .news-heading h2 {
   font-family: "Yellowtail";
@@ -54,13 +54,14 @@
   font-weight: 400;
   font-size: 36px;
   color: #7eb693;
+  margin: 0;
 }
 @media screen and (max-width: 820px) {
   .news-heading h2 {
     font-size: 32px;
   }
 }
-@media screen and (min-width: 412px) {
+@media screen and (max-width: 412px) {
   .news-heading h2 {
     margin-left: 10px;
     font-size: 45px;
@@ -73,6 +74,7 @@
   font-size: 50px;
   line-height: 59px;
   color: #274c5b;
+  margin: 0;
 }
 @media screen and (max-width: 1024px) {
   .news-heading p {
@@ -92,7 +94,7 @@
 }
 
 .news-load-more-btn {
-  padding: 28px 45px;
+  padding: 23px 45px;
   background: #ffffff;
   border: 2px solid #274c5b;
   border-radius: 16px;
@@ -117,7 +119,7 @@
   margin-top: 48px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 46px;
+  gap: 25px;
 }
 @media screen and (max-width: 1024px) {
   .list-news {
@@ -165,7 +167,7 @@
   font-family: "Roboto";
   font-style: normal;
   font-weight: 800;
-  font-size: 25px;
+  font-size: 29px;
   color: #274c5b;
   text-align: center;
   margin-bottom: -10px;
@@ -189,7 +191,7 @@
 .news-info {
   position: absolute;
   background: #ffffff;
-  width: 93%;
+  width: 90.4%;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, 0%);
@@ -244,6 +246,7 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
+  width: 88.9%;
 }
 
 .news-read-more-btn {
