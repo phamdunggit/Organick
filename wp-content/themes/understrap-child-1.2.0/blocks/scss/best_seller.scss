@@ -49,7 +49,7 @@
   grid-template-columns: repeat(4, 1fr);
   place-items: center;
   gap: 20px;
-  margin-bottom: 150px;
+  justify-content: space-between;
 }
 .product {
   background: #f9f8f8;
@@ -88,15 +88,18 @@
   display: flex;
   flex-direction: column;
   gap: 13px;
-  height: 324px;
+  height: auto;
   width: auto;
 }
 .product-image img {
-  width: 300px;
-  height: 100%;
+  aspect-ratio: 1;
+  width: 335px;
+  height: auto;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 .product-info {
+  margin-top: 10px;
   padding: 17px 30px;
   width: 100%;
   height: 67px;
@@ -138,11 +141,10 @@
   font-size: 18px;
   color: #274c5b;
 }
-@media screen and (max-width: 1280px) {
-  .product-wrapper {
-    padding: 0px 100px;
-  }
-}
+
+
+
+
 
 @media screen and (max-width: 1400px) {
   .best-seller-wrapper {
@@ -151,37 +153,14 @@
   .product-wrapper {
     padding: 0;
 
-    margin-bottom: 75px;
+    // margin-bottom: 75px;
   }
   .load-more-btn {
     margin-bottom: 100px;
   }
 }
 
-@media screen and (max-width: 1024px) {
-  .shop-wrapper {
-    margin-top: 100px !important;
-  }
-  .product-wrapper {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .product-image img {
-    width: 400px;
-  }
-}
-@media screen and (max-width: 768px) {
-    .best-seller-wrapper {
-        padding: 100px 50px;
-    }
-  .product-wrapper {
-    grid-template-columns: repeat(1, 1fr);
-    padding: 0;
-  }
-  .best-seller-title p {
-    font-size: 45px;
-  }
-}
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 576px) {
   .best-seller-wrapper {
     padding: 30px 0;
   }
@@ -200,3 +179,28 @@
     padding: 21px 22px;
   }
 }
+@media screen and (max-width: 768px) {
+  .best-seller-wrapper {
+      padding: 100px 50px;
+  }
+.product-wrapper {
+  grid-template-columns: repeat(1, 1fr);
+  padding: 0;
+}
+.best-seller-title p {
+  font-size: 45px;
+}
+}
+@media screen and (max-width: 992px) {
+  .best-seller-wrapper {
+    padding: 200px 60px;
+  }
+  .product-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .product-image img {
+    width: 400px;
+  }
+}
+
+

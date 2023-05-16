@@ -48,8 +48,8 @@ $navigation = get_field('navigation');
                 <div class="product-info">
                     <h4 class="product-name"><a href="<?php echo get_post_permalink($item->id) ?>"><?php echo $data['name'] ?></a></h4>
                     <div class="price">
-                        <span class="origin-price">$<?php echo $data['regular_price'] ?></span>
-                        <span class="sale-price">$<?php echo $data['sale_price'] ?></span>
+                        <span class="origin-price">$<?php echo round($data['regular_price'],2) ?></span>
+                        <span class="sale-price">$<?php echo round($data['sale_price'],2) ?></span>
                     </div>
                 </div>
             </div>

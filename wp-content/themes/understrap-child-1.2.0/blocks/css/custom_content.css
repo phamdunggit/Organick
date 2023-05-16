@@ -1,28 +1,78 @@
 .about-wrapper {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
+@media screen and (max-width: 992px) {
+  .about-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
 
 .about-image {
-  margin-top: 87px;
-  margin-left: 100px;
-  max-width: 50%;
-  width: 911px;
+  width: 100%;
   height: auto;
+  z-index: 1;
+  -o-object-fit: fill;
+     object-fit: fill;
 }
 
 .content-about {
-  margin-top: 168px;
-  margin-right: 260px;
-  margin-bottom: 199px;
-  max-width: 702px;
+  position: absolute;
+  z-index: 2;
+  width: 50%;
+  padding: 0px 163px 100px 0;
+}
+@media screen and (max-width: 576px) {
+  .content-about {
+    position: relative;
+    width: 100%;
+    padding: 0 10px 40px;
+  }
+}
+@media screen and (min-width: 576px) {
+  .content-about {
+    position: relative;
+    width: 100%;
+    padding: 0 10px 40px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .content-about {
+    padding: 0;
+  }
+}
+@media screen and (min-width: 992px) {
+  .content-about {
+    position: absolute;
+    top: 50%;
+    width: 60%;
+    padding: 0;
+    padding: 0 30px;
+    padding-bottom: 30px;
+    left: 50%;
+    -webkit-transform: translate(-20%, -50%);
+            transform: translate(-20%, -50%);
+    padding-left: 30px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .content-about {
+    padding: 0;
+    width: 50%;
+    -webkit-transform: translate(0%, -50%);
+            transform: translate(0%, -50%);
+  }
 }
 
 .sub-heading {
@@ -30,6 +80,7 @@
   font-style: normal;
   font-weight: 400;
   font-size: 36px;
+  margin-bottom: 8px;
 }
 
 .about-heading {
@@ -38,6 +89,42 @@
   font-weight: 800;
   font-size: 50px;
   line-height: 59px;
+  width: 78.5%;
+  margin: 0;
+}
+@media screen and (min-width: 576px) {
+  .about-heading {
+    width: 100%;
+    font-size: 27px;
+    line-height: 36px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .about-heading {
+    width: 100%;
+    font-size: 27px;
+    line-height: 36px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .about-heading {
+    font-size: 50px;
+    line-height: 59px;
+    width: 85.5%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .about-heading {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .about-heading {
+    font-size: 50px;
+    line-height: 59px;
+    width: 78.5%;
+    margin-bottom: 14px;
+  }
 }
 
 .about-text {
@@ -47,6 +134,37 @@
   font-size: 18px;
   line-height: 30px;
   margin-bottom: 46px;
+  width: 77.2%;
+}
+@media screen and (min-width: 576px) {
+  .about-text {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .about-text {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .about-text {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .about-text {
+    margin-bottom: 0px;
+    width: 85.2%;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .about-text {
+    margin-bottom: 48.5px;
+    width: 77.2%;
+  }
 }
 
 .list-heading {
@@ -54,6 +172,7 @@
   font-style: normal;
   font-weight: 800;
   font-size: 25px;
+  margin: 0;
 }
 
 .list-text {
@@ -62,7 +181,23 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 30px;
-  width: 85.4%;
+  width: 72.2%;
+}
+@media screen and (min-width: 992px) {
+  .list-text {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 576px) {
+  .list-text {
+    width: 100%;
+    margin: 0;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .list-text {
+    width: 72.2%;
+  }
 }
 
 .list-about {
@@ -78,6 +213,21 @@
           align-items: center;
   gap: 19px;
 }
+@media screen and (min-width: 992px) {
+  .list-about {
+    margin-bottom: 10px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .list-about {
+    margin-bottom: 5px;
+  }
+}
+@media screen and (min-width: 1401px) {
+  .list-about {
+    margin-bottom: 30px;
+  }
+}
 
 .list-icon {
   padding: 27px;
@@ -85,7 +235,9 @@
 }
 
 .list-icon img {
-  width: 46px;
+  /* width: 46px; */
+  width: 52px;
+  aspect-ratio: 1;
 }
 
 .content-btn {
@@ -101,6 +253,11 @@
   border-radius: 16px;
   margin-bottom: 228px;
 }
+@media screen and (max-width: 992px) {
+  .content-btn {
+    margin-bottom: 0px;
+  }
+}
 
 .content-btn img {
   width: 19px;
@@ -109,65 +266,23 @@
 .list-about:last-of-type {
   margin-bottom: 74px;
 }
-
-@media screen and (max-width: 1400px) {
-  .about-image {
-    margin-left: 70px;
-    margin-top: 0;
-  }
-  .content-about {
-    margin-right: 70px;
+@media screen and (min-width: 576px) {
+  .list-about:last-of-type {
+    margin-bottom: 50px;
   }
 }
-@media screen and (max-width: 1280px) {
-  .about-wrapper {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .about-image {
-    width: 100%;
-    margin: 0;
-    max-width: 100%;
-  }
-  .content-about {
-    margin: 100px 120px 220px 120px;
-    max-width: 100%;
+@media screen and (min-width: 576px) {
+  .list-about:last-of-type {
+    margin-bottom: 50px;
   }
 }
-@media screen and (max-width: 414px) {
-  .content-about {
-    margin: 35px 30px 120px 30px;
+@media screen and (min-width: 1200px) {
+  .list-about:last-of-type {
+    margin-bottom: 40px;
   }
-  .about-heading {
-    font-size: 31px;
-    line-height: 38px;
-  }
-  .about-text {
-    line-height: 28px;
-  }
-  .about-image {
-    margin: 0;
-  }
-  .content-btn {
-    font-size: 17px;
-    padding: 21px 22px;
-  }
-  .list-text {
-    line-height: 23px;
-    font-size: 14px;
-  }
-  .list-heading {
-    font-size: 20px;
+}
+@media screen and (min-width: 1401px) {
+  .list-about:last-of-type {
+    margin-bottom: 74px;
   }
 }

@@ -283,13 +283,12 @@ function custom_post_type_init()
 function register_menus() { 
     register_nav_menus(
         array(
-            'main-menu' => 'Main Menu',
+            'top-menu' => 'Top Menu',
             'footer-menu' => 'Footer Menu',
         )
     ); 
 }
 add_action( 'init', 'register_menus' );
-//Register Custom Navigation Walker
 if ( ! file_exists( get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php' ) ) {
     // File does not exist... return an error.
     return new WP_Error( 'class-wp-bootstrap-navwalker-missing', __( 'It appears the class-wp-bootstrap-navwalker.php file may be missing.', 'wp-bootstrap-navwalker' ) );
