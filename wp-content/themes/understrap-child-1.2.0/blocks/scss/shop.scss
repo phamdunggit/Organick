@@ -1,10 +1,11 @@
 .product-wrapper {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4,1fr);
   place-items: center;
   gap: 20px;
 }
 .product {
+  max-width: 335px;
   background: #f9f8f8;
   display: flex;
   align-items: start;
