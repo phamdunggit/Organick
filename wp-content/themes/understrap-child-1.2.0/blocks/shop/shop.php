@@ -7,8 +7,8 @@ $params = array(
     'post_type'      => 'product',
     'limit' => $number,
     'orderby'        => 'meta_value_num',
-    'meta_key'       => '_price',
-    'order'          => 'asc',
+    'meta_key' => 'total_sales',
+    'order'          => 'desc',
     'paginate' => true,
     'page' => $paged
     // 'page'=> 2,
@@ -20,7 +20,7 @@ $products = wc_get_products($params);
 $navigation = get_field('navigation');
 // echo "<pre>";
 // var_dump($navigation);
-
+// var_dump($catalog_orderby_options);
 // var_dump($products);
 // var_dump($products->products[0]->get_price());
 // var_dump(get_the_post_thumbnail_url( $products->posts['0']->ID, 'full' ));
@@ -48,8 +48,8 @@ $navigation = get_field('navigation');
                 <div class="product-info">
                     <h4 class="product-name"><a href="<?php echo get_post_permalink($item->id) ?>"><?php echo $data['name'] ?></a></h4>
                     <div class="price">
-                        <span class="origin-price">$<?php echo round($data['regular_price'],2) ?></span>
-                        <span class="sale-price">$<?php echo round($data['sale_price'],2) ?></span>
+                        <span class="origin-price">$<?php echo round($data['regular_price'], 2) ?></span>
+                        <span class="sale-price">$<?php echo round($data['sale_price'], 2) ?></span>
                     </div>
                 </div>
             </div>
@@ -58,7 +58,12 @@ $navigation = get_field('navigation');
     <?php
     if ($navigation == 1) :
     ?>
-        <a class="load-more-btn" href="<?php echo get_permalink(wc_get_page_id('shop')); ?>">Load more <img src="<?php echo get_theme_file_uri() . '/assets/images/Aerrow.png' ?>" alt=""></a>
+        <a class="load-more-btn" href="<?php echo get_permalink(wc_get_page_id('shop')); ?>">Load more
+            <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="9.5" cy="9.5" r="9.5" fill="#335B6B" />
+                <path d="M9.47641 6.12891L12.871 9.19342L9.47641 12.2579M12.3995 9.19342H5.51611" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </a>
     <?php
     else :
         $big = 999999999; // need an unlikely integer

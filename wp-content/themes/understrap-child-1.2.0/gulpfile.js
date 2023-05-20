@@ -10,7 +10,7 @@ function styles() {
   return src("./scss/*.scss")
     .pipe(scss())
     .pipe(autoprefix("last 2 version"))
-    .pipe(cssMinfy())
+    // .pipe(cssMinfy())
     .pipe(dest("./css/"))
     .pipe(browserSync.stream());
 }

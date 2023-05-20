@@ -6,6 +6,7 @@ $args = array(
     'post_type' => 'product',
     'meta_key' => 'total_sales',
     'orderby' => 'meta_value_num',
+    'order'          => 'desc',
     'posts_per_page' => $numofprod,
 );
 $best_sell_prod = wc_get_products($args);

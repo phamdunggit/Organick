@@ -250,6 +250,28 @@ function my_acf_blocks_init()
 				wp_enqueue_style('news-css', get_stylesheet_directory_uri() . '/blocks/css/news.css');
 			},
 		));
+		acf_register_block_type(array(
+			'name'              => 'custom_footer_layout',
+			'title'             => __('Custom Footer'),
+			'description'       => __('A Footer Layout.'),
+			'render_template'   => 'blocks/footer/footer.php',
+			'category'          => 'layout',
+			'icon'   => 'slides',
+			'enqueue_assets' => function () {
+				wp_enqueue_style('footer-css', get_stylesheet_directory_uri() . '/blocks/css/footer.css');
+			},
+		));
+		acf_register_block_type(array(
+			'name'              => 'custom_banner_layout',
+			'title'             => __('Custom Banner'),
+			'description'       => __('A banner Layout.'),
+			'render_template'   => 'blocks/banner/banner.php',
+			'category'          => 'widgets',
+			'icon'   => 'embed-photo',
+			'enqueue_assets' => function () {
+				wp_enqueue_style('banner-css', get_stylesheet_directory_uri() . '/blocks/css/banner.css');
+			},
+		));
 	}
 }
 // Custom post type
@@ -296,3 +318,4 @@ if ( ! file_exists( get_template_directory() . '/inc/class-wp-bootstrap-navwalke
     // File exists... require it.
     require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
 }
+

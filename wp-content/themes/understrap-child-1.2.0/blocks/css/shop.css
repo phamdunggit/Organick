@@ -6,6 +6,7 @@
 }
 
 .product {
+  max-width: 335px;
   background: #f9f8f8;
   display: -webkit-box;
   display: -ms-flexbox;
