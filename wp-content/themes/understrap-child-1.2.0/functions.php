@@ -261,27 +261,15 @@ function my_acf_blocks_init()
 				wp_enqueue_style('footer-css', get_stylesheet_directory_uri() . '/blocks/css/footer.css');
 			},
 		));
-		
 		acf_register_block_type(array(
-			'name'              => 'custom_why_choose_us_layout',
-			'title'             => __('Custom Why Choose Us'),
-			'description'       => __('A Why Choose Us Layout.'),
-			'render_template'   => 'blocks/why_choose_us/why_choose_us.php',
+			'name'              => 'custom_banner_layout',
+			'title'             => __('Custom Banner'),
+			'description'       => __('A banner Layout.'),
+			'render_template'   => 'blocks/banner/banner.php',
 			'category'          => 'widgets',
-			'icon'   => 'saved',
+			'icon'   => 'embed-photo',
 			'enqueue_assets' => function () {
-				wp_enqueue_style('why_choose_us-css', get_stylesheet_directory_uri() . '/blocks/css/why_choose_us.css');
-			},
-		));
-		acf_register_block_type(array(
-			'name'              => 'custom_team_layout',
-			'title'             => __('Custom Team'),
-			'description'       => __('A Team Layout.'),
-			'render_template'   => 'blocks/team/team.php',
-			'category'          => 'widgets',
-			'icon'   => 'admin-users',
-			'enqueue_assets' => function () {
-				wp_enqueue_style('team-css', get_stylesheet_directory_uri() . '/blocks/css/team.css');
+				wp_enqueue_style('banner-css', get_stylesheet_directory_uri() . '/blocks/css/banner.css');
 			},
 		));
 	}
@@ -289,15 +277,14 @@ function my_acf_blocks_init()
 // Custom post type
 add_action('init', 'custom_post_type_init');
 function custom_post_type_init()
-{	
-	//register news post type 
-	$labels_news = array(
+{
+	$labels = array(
 		'name'                  => _x('News', 'Post type general name', 'textdomain'),
 		'singular_name'         => _x('News', 'Post type singular name', 'textdomain'),
 		'menu_name'             => _x('News', 'Admin Menu text', 'textdomain'),
 	);
-	$args_news = array(
-		'labels'             => $labels_news,
+	$args = array(
+		'labels'             => $labels,
 		'public'             => true,
 		'publicly_queryable' => true,
 		'show_ui'            => true,
@@ -312,31 +299,7 @@ function custom_post_type_init()
 		'menu_icon' => 'dashicons-media-document',
 		'show_in_rest' => true,
 	);
-	register_post_type('news', $args_news);
-
-	//register teams post type 
-	$labels_team = array(
-		'name'                  => _x('Team', 'Post type general name', 'textdomain'),
-		'singular_name'         => _x('Team', 'Post type singular name', 'textdomain'),
-		'menu_name'             => _x('Team', 'Admin Menu text', 'textdomain'),
-	);
-	$args_team = array(
-		'labels'             => $labels_team,
-		'public'             => true,
-		'publicly_queryable' => true,
-		'show_ui'            => true,
-		'show_in_menu'       => true,
-		'query_var'          => true,
-		'rewrite'            => array('slug' => 'team'),
-		'capability_type'    => 'post',
-		'has_archive'        => true,
-		'hierarchical'       => false,
-		'menu_position'      => null,
-		'supports'           => array('title'),
-		'menu_icon' => 'dashicons-admin-users',
-		'show_in_rest' => true,
-	);
-	register_post_type('team', $args_team);
+	register_post_type('news', $args);
 }
 //register menu 
 function register_menus() { 
