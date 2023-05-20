@@ -50,8 +50,7 @@ echo "</pre>";
                 <div class="modal fade" id="exampleModal<?php echo $member ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
-                            <h1>hello</h1>
-
+                            <div class="modal-member-image"></div>
                         </div>
                     </div>
                 </div>
