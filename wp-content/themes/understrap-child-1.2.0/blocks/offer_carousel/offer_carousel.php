@@ -31,12 +31,12 @@ $offer_carousel = get_field('offer_carousel')
             dots: false,
             responsive: {
                 0: {
-                    items: 1
-                },
-                600: {
                     items: 2
                 },
-                1000: {
+                576: {
+                    items: 2
+                },
+                992: {
                     items: 3
                 }
             }

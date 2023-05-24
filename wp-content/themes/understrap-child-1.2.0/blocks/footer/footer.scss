@@ -1,0 +1,139 @@
+#wrapper-footer-full,
+#wrapper-static-hero {
+  background-color: #ffffff;
+}
+.contact {
+  padding-right: 51px;
+  text-align: end;
+  border-right: 1px solid #d5d5d5;
+  @media screen and (max-width: 768px) {
+    padding-right: 0px;
+    text-align: center;
+    border-right: none;
+    border-bottom: 1px solid #d5d5d5;
+  }
+  
+  h5 {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    color: #274c5b;
+    margin-bottom: 32px;
+  }
+  .contact-list {
+    list-style: none;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    color: #525c60;
+  }
+  li {
+    margin-bottom: 30px;
+  }
+  li p {
+    margin-bottom: 0;
+  }
+  li span {
+    font-weight: 400;
+  }
+}
+.general_information {
+  padding: 0 41px;
+  @media screen and (max-width: 768px) {
+    border-bottom: 1px solid #d5d5d5;
+  }
+  
+  
+  
+}
+.site-info {
+  margin-top: 26px;
+  text-align: center;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  color: #525c60;
+}
+.social-network-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding-bottom: 30px;
+  margin-top: 49px;
+  a {
+    color: #274c5b;
+    font-size: 19px;
+    max-width: 60px;
+    width: 60px;
+    aspect-ratio: 1;
+    background: #eff6f1;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.utility_pages {
+    height: 90%;
+    border-left: 1px solid #D5D5D5;
+    padding-left: 50px;
+    @media screen and (max-width: 768px) {
+        height: 90%;
+        border-left: none;
+        padding-left: 0px;
+        text-align: center;
+    }
+    
+  & h5 {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    color: #274c5b;
+  }
+  .page-list {
+    margin-top: 31px;
+    list-style: none;
+    padding-left: 0 !important;
+    & li {
+        padding-bottom: 15px;
+      & a {
+        text-decoration: none;
+        font-family: "Open Sans";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        color: #525c60;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+    .first-col{
+        order: 2;
+        margin-bottom: 30px;
+        
+    }
+    .second-col{
+        order: 1;
+        margin-bottom: 30px;
+    }
+    .third-col{
+        order: 3;
+    }
+}
+.row {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--bs-gutter-y));
+  margin-right: 0;
+   margin-left: 0;
+}

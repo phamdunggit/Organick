@@ -1,0 +1,127 @@
+.newsletter-wrapper {
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0 13% 100px 13%;
+  border-radius: 30px;
+  @media screen and (max-width: 1400px) {
+    margin: 0 8%;
+  }
+}
+.wpcf7 {
+  max-width: 600px;
+  margin: 0 !important;
+}
+.newsletter-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 105px 71px;
+  margin-bottom: 117px;
+  @media screen and (max-width: 1400px) {
+    padding: 50px 71px;
+    margin-bottom: 80px;
+  }
+  
+  @media screen and (max-width: 992px) {
+    flex-direction: column;
+    justify-content: center;
+  }
+  @media screen and (max-width: 576px) {
+    padding: 55px 31px;
+  }
+  
+  h2 {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 50px;
+    color: #ffffff;
+    margin-bottom: 0;
+    width: 28.8%;
+    @media screen and (max-width: 992px) {
+      text-align: center;
+      width: 100%;
+      margin-bottom: 30px;
+    }
+  }
+}
+.wpcf7 .wpcf7-form p {
+  margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  gap: 3px;
+  @media screen and (max-width: 576px) {
+    flex-direction: column;
+  }
+}
+.newsletter-email {
+  max-width: 349px !important;
+  height: 80px;
+  font-family: "Roboto";
+  font-style: italic;
+  font-weight: 400 !important;
+  font-size: 18px !important;
+  color: #ababab !important;
+  border-radius: 16px !important;
+}
+.form-control:focus,
+.wpcf7 .wpcf7-validation-errors:focus,
+.wpcf7 input[type="color"]:focus,
+.wpcf7 input[type="date"]:focus,
+.wpcf7 input[type="datetime-local"]:focus,
+.wpcf7 input[type="datetime"]:focus,
+.wpcf7 input[type="email"]:focus,
+.wpcf7 input[type="file"]:focus,
+.wpcf7 input[type="month"]:focus,
+.wpcf7 input[type="number"]:focus,
+.wpcf7 input[type="range"]:focus,
+.wpcf7 input[type="search"]:focus,
+.wpcf7 input[type="submit"]:focus,
+.wpcf7 input[type="tel"]:focus,
+.wpcf7 input[type="text"]:focus,
+.wpcf7 input[type="time"]:focus,
+.wpcf7 input[type="url"]:focus,
+.wpcf7 input[type="week"]:focus,
+.wpcf7 select:focus,
+.wpcf7 textarea:focus {
+  color: #212529;
+  background-color: #ffffff;
+  border-color: #ffffff;
+  outline: 0;
+  box-shadow: none;
+}
+.newsletter-submit-btn {
+  font-family: "Roboto" !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  font-size: 20px !important;
+  width: 220px !important;
+  height: 80px;
+  background: #274c5b !important;
+  border-radius: 16px !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+.wpcf7-spinner {
+  visibility: hidden;
+  display: none;
+  background-color: #23282d;
+  opacity: 0.75;
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: 100%;
+  padding: 0;
+  margin: 0 24px;
+  position: relative;
+}
+.wpcf7 .wpcf7-not-valid-tip {
+  position: absolute;
+  color: theme-color("danger");
+}
+.wpcf7 form.sent .wpcf7-response-output {
+  position: absolute;
+  border-color: #46b450;
+}

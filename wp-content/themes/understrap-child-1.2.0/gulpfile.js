@@ -7,20 +7,20 @@ const jsMinify = require("gulp-terser");
 const browserSync = require("browser-sync").create();
 
 function styles() {
-  return src("./scss/*.scss")
+  return src("./assets/scss/*.scss")
     .pipe(scss())
     .pipe(autoprefix("last 2 version"))
     // .pipe(cssMinfy())
-    .pipe(dest("./css/"))
+    .pipe(dest("./assets/css/"))
     .pipe(browserSync.stream());
 }
 function block_styles() {
   return (
-    src("./blocks/scss/*.scss")
+    src('./blocks/**/*.scss')
       .pipe(scss())
       .pipe(autoprefix("last 2 version"))
       // .pipe(cssMinfy())
-      .pipe(dest("./blocks/css/"))
+      .pipe(dest('./blocks/'))
       .pipe(browserSync.stream())
   );
 }
@@ -39,8 +39,8 @@ function watchTask() {
 
   watch(
     [
-      "./scss/*.scss",
-      "./blocks/scss/*.scss",
+      "./assets/scss/*.scss",
+      "./blocks/**/*.scss",
       "./custom-js/*.js",
       "./*.php",
       "./**/*.php",
@@ -48,4 +48,4 @@ function watchTask() {
     series(styles, scripts, block_styles)
   ).on("change", browserSync.reload);
 }
-exports.default = series(styles, block_styles, scripts, watchTask);
+exports.default = series(styles,block_styles,scripts,watchTask,);

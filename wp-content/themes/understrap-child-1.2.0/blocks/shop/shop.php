@@ -1,14 +1,40 @@
 <?php
 global $paged;
 $number = get_field('number');
-$paged = (get_query_var('page')) ? get_query_var('page') : 1;
+$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+$order = "desc";
+$metakey;
+$orderby_query = (get_query_var('orderby')) ? get_query_var('orderby') : "total_sales";
+$sort = get_field('sort_by');
+$sort_by=($orderby_query=="product_date")? "date" : "meta_value_num";
+switch ($orderby_query) {
+    case "total_sales":
+        $metakey="total_sales";
+        $order="desc";
+        break;
+    case "product_date":
+        $metakey="";
+        $order="desc";
+        break;
+    case "price_asc":
+        $metakey="_price";
+        $order="asc";
+        break;
+    case "price-desc":
+        $metakey="_price";
+        $order="desc";
+        break;
+}
 // var_dump($paged);
+
+// var_dump($metakey);
+// var_dump($order);
 $params = array(
     'post_type'      => 'product',
     'limit' => $number,
-    'orderby'        => 'meta_value_num',
-    'meta_key' => 'total_sales',
-    'order'          => 'desc',
+    'meta_key' => $metakey,
+    'orderby' => $sort_by,
+    'order'          => $order,
     'paginate' => true,
     'page' => $paged
     // 'page'=> 2,
@@ -25,13 +51,37 @@ $navigation = get_field('navigation');
 // var_dump($products->products[0]->get_price());
 // var_dump(get_the_post_thumbnail_url( $products->posts['0']->ID, 'full' ));
 // var_dump( get_post_meta( $products->posts['0']->ID, '_price', true ));
+// var_dump($sort_by);
 // echo "</pre>";
 
 ?>
 <div class="shop-wrapper">
-    <p class="shop-sub-heading">Categories</p>
-    <h1 class="shop-heading">Our Products</h1>
+    
+    <div class="shop-header">
+        <div class="shop-heading">
+            <p class="shop-sub-heading">Categories</p>
+            <h1 class="shop-heading">Our Products</h1>
+        </div>
+    </div>
+    <?php if($sort==2): else : ?>
+    <div class="sort-container">
+        <form class="woocommerce-ordering" method="get">
+            <select name="orderby" class="orderby custom-select form-select" aria-label="Shop order">
+                <option value="total_sales" <?php if (get_query_var('orderby') == "total_sales" || !get_query_var('orderby')) : echo "selected";
+                                            else : endif; ?>>Sort by popularity</option>
+                <option value="product_date" <?php if (get_query_var('orderby') == "product_date") : echo "selected";
+                                                else : endif; ?>>Sort by latest</option>
+                <option value="price_asc" <?php if (get_query_var('orderby') == "price_asc") : echo "selected";
+                                            else : endif; ?>>Sort by price: low to high</option>
+                <option value="price-desc" <?php if (get_query_var('orderby') == "price-desc") : echo "selected";
+                                            else : endif; ?>>Sort by price: high to low</option>
+            </select>
+            <input type="hidden" name="paged" value="1">
+        </form>
+    </div>
+    <?php endif; ?>
     <div class="product-wrapper">
+
 
         <?php
         //display products
@@ -66,17 +116,17 @@ $navigation = get_field('navigation');
         </a>
     <?php
     else :
-        $big = 999999999; // need an unlikely integer
+        $big = 999999999;  // need an unlikely integer
     ?>
         <div class="pagination">
-
-
             <?php
             echo paginate_links(array(
-                'base' => str_replace($big, '%#%', get_pagenum_link($big)),
-                'format' => '?paged=%#%',
+                // 'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+                'format'        =>  '?paged=%#%',
                 'current' => $paged,
                 'total' => $products->max_num_pages,
+                'prev_text' => '<i class="fa fa-chevron-left" aria-hidden="true"></i>',
+                'next_text' => '<i class="fa fa-chevron-right" aria-hidden="true"></i>'
             ));
             wp_reset_postdata();
             ?>

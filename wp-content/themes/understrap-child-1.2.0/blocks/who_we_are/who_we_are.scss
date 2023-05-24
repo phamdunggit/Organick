@@ -1,0 +1,82 @@
+.wwa-wrapper {
+  // height: 952px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  @media screen and (max-width: 1200px) {
+   background-size: cover;
+  }
+  @media screen and (max-width: 768px) {
+    justify-content: center;
+  }
+  
+}
+.wwa-content {
+  position: relative;
+  right: 7%;
+  // max-width: 50%;
+  width: 50%;
+  background-color: #ffffff;
+  padding: 78px 89px;
+  border-radius: 30px;
+  margin: 100px 0;
+  @media screen and (max-width: 1200px) {
+  width: 70%;
+  }
+  @media screen and (max-width: 768px) {
+    right: 0;
+    width: 90%;
+    padding: 30px;
+  }
+  
+  
+}
+.wwa-heading {
+  font-family: "Yellowtail";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  color: #7eb693;
+  @media screen and (max-width: 568px) {
+    font-size: 30px;
+  }
+  
+}
+.wwa-sub-heading {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 50px;
+  color: #274c5b;
+  margin-bottom: 36px;
+  max-width: 623px;
+  line-height: 59px;
+  @media screen and (max-width: 568px) {
+    font-size: 40px;
+    line-height: 43px;
+  }
+}
+.wwa-list {
+  list-style: none;
+  padding-left: 0;
+  li {
+    h3 {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 25px;
+      color: #274c5b;
+    }
+    p {
+      font-family: "Open Sans";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 165.4%;
+      color: #525c60;
+      max-width: 708px;
+    }
+  }
+}
