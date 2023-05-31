@@ -95,7 +95,7 @@
   width: 100%;
   max-width: 1108px;
   display: flex;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
   gap: 84px;
   padding-bottom: 175px;
   align-items: center;
@@ -106,6 +106,7 @@
     gap: 36px;
   }
   @media screen and (max-width: 992px) {
+    flex-wrap: wrap;
     gap: 30px;
   }
   @media screen and (max-width: 768px) {

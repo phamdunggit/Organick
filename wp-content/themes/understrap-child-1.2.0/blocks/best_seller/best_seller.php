@@ -38,8 +38,8 @@ $best_sell_prod = wc_get_products($args);
                 <div class="product-info">
                     <h4 class="product-name"><a href="<?php echo get_post_permalink($item->id) ?>"><?php echo $data['name'] ?></a></h4>
                     <div class="price">
-                        <span class="origin-price">$<?php echo round($data['regular_price'], 2) ?></span>
-                        <span class="sale-price">$<?php echo round($data['sale_price'], 2) ?></span>
+                        <span class="origin-price"><?php echo get_woocommerce_currency_symbol() ?><?php echo round($data['regular_price'], 2) ?></span>
+                        <span class="sale-price"><?php echo get_woocommerce_currency_symbol() ?><?php echo round($data['sale_price'], 2) ?></span>
                     </div>
                 </div>
             </div>

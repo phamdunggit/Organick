@@ -7,7 +7,7 @@ const jsMinify = require("gulp-terser");
 const browserSync = require("browser-sync").create();
 
 function styles() {
-  return src("./assets/scss/*.scss")
+  return src("./assets/scss/theme.scss")
     .pipe(scss())
     .pipe(autoprefix("last 2 version"))
     // .pipe(cssMinfy())
@@ -39,7 +39,7 @@ function watchTask() {
 
   watch(
     [
-      "./assets/scss/*.scss",
+      "./assets/**/*.scss",
       "./blocks/**/*.scss",
       "./custom-js/*.js",
       "./*.php",

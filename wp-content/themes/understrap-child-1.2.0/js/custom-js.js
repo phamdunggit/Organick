@@ -1,0 +1,1 @@
+let toggler=document.querySelector(".navbar-toggler"),menu=document.querySelector("#bs-example-navbar-collapse-1");toggler.addEventListener("click",(function(){menu.classList.toggle("show")}));

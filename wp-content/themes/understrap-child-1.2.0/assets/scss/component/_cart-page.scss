@@ -1,0 +1,304 @@
+.cart-container {
+  padding: 100px 13%;
+  @media screen and (max-width: 1400px) {
+    padding: 100px 8%;
+  }
+
+  h1 {
+    width: 100%;
+    @include h1;
+    color: $primary-color;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+}
+
+.product-remove-col {
+  width: 8.3%;
+  text-align: center;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+}
+.product-thumbnail-col {
+  width: 25%;
+  text-align: center;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+}
+.product-name-col {
+  width: 41.6%;
+  text-align: start;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+}
+.product-price-col {
+  width: 8.3%;
+  text-align: center;
+  @media screen and (max-width: 768px) {
+    text-align: start;
+    width: 100%;
+  }
+}
+.product-quantity-col {
+  width: 8.3%;
+  text-align: center;
+  @media screen and (max-width: 768px) {
+
+    display: flex;
+    text-align: start;
+    width: 100%;
+  }
+}
+.product-subtotal-col {
+  width: 8.3%;
+  text-align: center;
+  @media screen and (max-width: 768px) {
+    text-align: start;
+    width: 100%;
+  }
+}
+.woocommerce .quantity .qty {
+  width: 100%;
+  text-align: center;
+  @media screen and (max-width: 768px) {
+    text-align: start;
+    width: 100%;
+  }
+}
+.quantity {
+  .input-text {
+    height: 30px !important;
+  }
+}
+.fa.fa-trash {
+  color: #274c5b;
+  font-size: 30px;
+}
+.cart-table {
+  @media screen and (max-width: 768px) {
+    display: block; 
+    thead, tbody, th, td, tr { 
+      display: block; 
+    }
+    thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+    .cart_item td:before {
+      position: relative;
+      top: 0;
+      left: 6px;
+      width: 50%;
+      padding-right: 10px;
+      white-space: nowrap;
+      font-family: "Roboto";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    color: #274c5b;
+    }
+    .cart_item td:nth-of-type(3):before {
+      content: "Product:";
+    }
+    .cart_item td:nth-of-type(4):before {
+      content: "Price:";
+    }
+    .cart_item td:nth-of-type(5):before {
+      content: "Quantity:";
+    }
+    .cart_item td:nth-of-type(6):before {
+      content: "Subtotal:";
+    }
+  }
+
+  th {
+    // width: 100%;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    color: #274c5b;
+  }
+  td.product-name-col {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    a {
+      color: #274c5b;
+    }
+  }
+}
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media screen and (max-width: 992px) {
+    flex-direction: column;
+    row-gap: 10px;
+  }
+}
+.coupon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  @media screen and (max-width: 992px) {
+    width: 100%;
+    flex-direction: column;
+    // row-gap: 10px;
+  }
+  label {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    color: #274c5b;
+  }
+}
+.woocommerce-cart #coupon_code.input-text {
+  width: 300px !important;
+  @media screen and (max-width: 992px) {
+    width: 100% !important;
+  }
+}
+.coupon-btn {
+  width: 160px;
+  height: 60px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  color: #ffffff;
+  background: #274c5b;
+  border-radius: 16px;
+  border: none;
+  @media screen and (max-width: 992px) {
+    align-self: end;
+  }
+}
+.update-cart {
+  width: 160px;
+  height: 60px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  color: #ffffff;
+  background: #274c5b;
+  border-radius: 16px;
+  border: none;
+  @media screen and (max-width: 992px) {
+    align-self: end;
+  }
+}
+.update-cart:disabled {
+  background: #eff6f1;
+  color: #274c5b;
+}
+.product-price-col span {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  color: #000000;
+}
+.product-subtotal-col span {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  color: #000000;
+}
+.cart-collaterals {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.cart_totals {
+  width: 50% !important;
+  @media screen and (max-width: 992px) {
+    width: 100% !important;
+  }
+
+  h2 {
+    width: 100%;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 50px;
+    color: #274c5b;
+    text-align: center;
+    margin: 30px 0;
+  }
+}
+.shop_table {
+  th {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    color: #274c5b;
+  }
+  td span {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    color: #000000;
+  }
+}
+.checkout-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 55px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  color: #ffffff;
+  background: #274c5b;
+  border-radius: 28px;
+  border: none;
+  //   padding: 15px 20px 15px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+.return-to-shop-btn {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  color: #ffffff;
+  background: #274c5b;
+  border-radius: 28px;
+  border: none;
+  padding: 28px 39px;
+}
+// .btn:hover{
+//     color: #ffffff;
+//     background-color: #274c5b;
+//     border-color: none;
+// }
+.return-to-shop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+}
+.btn:hover, .woocommerce-info a.button:hover, .woocommerce-notices-wrapper .woocommerce-message a.button:hover, .wpcf7 input[type=submit]:hover {
+  color: #ffffff;
+  background-color: #274c5b;
+  border-color: #274c5b;
+}
+.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, .woocommerce-info .btn-check:checked+a.button, .woocommerce-info :not(.btn-check)+a.button:active, .woocommerce-info a.active.button, .woocommerce-info a.button:first-child:active, .woocommerce-info a.show.button, .woocommerce-notices-wrapper .woocommerce-message .btn-check:checked+a.button, .woocommerce-notices-wrapper .woocommerce-message :not(.btn-check)+a.button:active, .woocommerce-notices-wrapper .woocommerce-message a.active.button, .woocommerce-notices-wrapper .woocommerce-message a.button:first-child:active, .woocommerce-notices-wrapper .woocommerce-message a.show.button, .wpcf7 .btn-check:checked+input[type=submit], .wpcf7 :not(.btn-check)+input[type=submit]:active, .wpcf7 input.active[type=submit], .wpcf7 input.show[type=submit], .wpcf7 input[type=submit]:first-child:active, :not(.btn-check)+.btn:active {
+  color: #ffffff;
+  background-color: #274c5b;
+  border-color: #274c5b;
+}

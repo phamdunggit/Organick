@@ -96,26 +96,42 @@ add_action('customize_controls_enqueue_scripts', 'understrap_child_customize_con
 //add custom js file
 function load_custom_js()
 {
-	wp_register_script('customjs', get_stylesheet_directory_uri() . '/assets/js/custom-js.js', '', false, true);
-	wp_enqueue_script('customjs');
-	wp_register_script('jquery-owl', get_stylesheet_directory_uri() . '/blocks/offer_carousel/jquery-3.6.4.min.js', array('jquery'), '', true);
+	wp_register_script('header-js', get_stylesheet_directory_uri() . '/assets/js/header.js', '', false, true);
+	wp_enqueue_script('header-js');
+	wp_register_script('login-register-js', get_stylesheet_directory_uri() . '/assets/js/login-register.js', '', false, true);
+	wp_enqueue_script('login-register-js');
+	wp_register_script('single-product-js', get_stylesheet_directory_uri() . '/assets/js/single-product.js', '', false, true);
+	wp_enqueue_script('single-product-js');
+	wp_register_script('jquery-owl', get_stylesheet_directory_uri() . '/assets/lib/jquery-3.6.4.min.js', array('jquery'), '', true);
 	wp_enqueue_script('jquery-owl');
+	wp_register_script('jquery-validate', get_stylesheet_directory_uri() . '/assets/lib/jquery.validate.min.js', array('jquery'), '', true);
+	wp_enqueue_script('jquery-validate');
+	wp_enqueue_script('owl-js', get_stylesheet_directory_uri() . '/assets/lib/OwlCarousel2-2.3.4/dist/owl.carousel.min.js', array('jquery'), '', true);
+	wp_enqueue_script('owl-js');
+	// wp_enqueue_script( 'wc-password-strength-meter' );
 }
 add_action('wp_enqueue_scripts', 'load_custom_js');
 
 //add custom css file
 function load_custom_stylesheet()
 {
-	wp_register_style('custom-style', get_stylesheet_directory_uri() . '/assets/css/custom-style.css', 'all');
-	wp_enqueue_style('custom-style');
-	wp_register_style('newsletter-style', get_stylesheet_directory_uri() . '/assets/css/newsletter.css', 'all');
-	wp_enqueue_style('newsletter-style');
+	wp_register_style('theme-style', get_stylesheet_directory_uri() . '/assets/css/theme.css', 'all');
+	wp_enqueue_style('theme-style');
+	wp_enqueue_style('owl-carousel-block', get_stylesheet_directory_uri() . '/assets/lib/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css');
+	wp_enqueue_style('owl-carousel-block');
+	wp_enqueue_style('owl-theme-carousel-block', get_stylesheet_directory_uri() . '/assets/lib/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css');
+	wp_enqueue_style('owl-theme-carousel-block');
 }
 add_action('wp_enqueue_scripts', 'load_custom_stylesheet');
 if (function_exists('acf_add_options_page')) {
 	acf_add_options_page(array(
 		'page_title'    => 'Theme Newsletter Settings',
 		'menu_title'    => 'Newsletter',
+		'redirect'    => false,
+	));
+	acf_add_options_page(array(
+		'page_title'    => 'Theme Single Shop Settings',
+		'menu_title'    => 'Single Shop ',
 		'redirect'    => false,
 	));
 }
@@ -148,9 +164,6 @@ function my_acf_blocks_init()
 			'icon'   => 'tickets',
 			'enqueue_assets' => function () {
 				wp_enqueue_style('offer-carousel-block', get_stylesheet_directory_uri() . '/blocks/offer_carousel/offer_carousel.css');
-				wp_enqueue_style('owl-carousel-block', get_stylesheet_directory_uri() . '/blocks/offer_carousel/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css');
-				wp_enqueue_style('owl-theme-carousel-block', get_stylesheet_directory_uri() . '/blocks/offer_carousel/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css');
-				wp_enqueue_script('owl-js', get_stylesheet_directory_uri() . '/blocks/offer_carousel/OwlCarousel2-2.3.4/dist/owl.carousel.min.js', array('jquery'), '', true);
 			},
 		));
 		acf_register_block_type(array(
@@ -241,7 +254,7 @@ function my_acf_blocks_init()
 				wp_enqueue_style('footer-css', get_stylesheet_directory_uri() . '/blocks/footer/footer.css');
 			},
 		));
-		
+
 		acf_register_block_type(array(
 			'name'              => 'custom_why_choose_us_layout',
 			'title'             => __('Custom Why Choose Us'),
@@ -269,7 +282,7 @@ function my_acf_blocks_init()
 // Custom post type
 add_action('init', 'custom_post_type_init');
 function custom_post_type_init()
-{	
+{
 	//register news post type 
 	$labels_news = array(
 		'name'                  => _x('News', 'Post type general name', 'textdomain'),
@@ -319,20 +332,267 @@ function custom_post_type_init()
 	register_post_type('team', $args_team);
 }
 //register menu 
-function register_menus() { 
-    register_nav_menus(
-        array(
-            'top-menu' => 'Top Menu',
-            'footer-menu' => 'Footer Menu',
-        )
-    ); 
+function register_menus()
+{
+	register_nav_menus(
+		array(
+			'top-menu' => 'Top Menu',
+			'footer-menu' => 'Footer Menu',
+		)
+	);
 }
-add_action( 'init', 'register_menus' );
-if ( ! file_exists( get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php' ) ) {
-    // File does not exist... return an error.
-    return new WP_Error( 'class-wp-bootstrap-navwalker-missing', __( 'It appears the class-wp-bootstrap-navwalker.php file may be missing.', 'wp-bootstrap-navwalker' ) );
+add_action('init', 'register_menus');
+if (!file_exists(get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php')) {
+	// File does not exist... return an error.
+	return new WP_Error('class-wp-bootstrap-navwalker-missing', __('It appears the class-wp-bootstrap-navwalker.php file may be missing.', 'wp-bootstrap-navwalker'));
 } else {
-    // File exists... require it.
-    require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
+	// File exists... require it.
+	require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
 }
 
+// custom login-register page 
+	// function woocommerce_registration_errors_validation($reg_errors, $sanitized_user_login, $user_email)
+	// {
+	// 	global $woocommerce;
+	// 	extract($_POST);
+	// 	if (strcmp($password, $password2) !== 0) {
+	// 		return new WP_Error('registration-error', __('Passwords do not match.', 'woocommerce'));
+	// 	}
+	// 	return $reg_errors;
+	// }
+	// add_filter('woocommerce_registration_errors', 'woocommerce_registration_errors_validation', 10, 3);
+function custom_woocommerce_process_registration_errors( $validation_errors, $username, $password, $email ){
+	// if (  strcmp($_POST['password'] , $_POST['password2']) ) {
+    //     $validation_errors->add( 'confirm-password', __('Passwords do not match.', 'woocommerce') );
+    // }
+	if (!strpos($_POST['username']," ")) {
+        $validation_errors->add( 'space_username_input', __('Unknown email address. Check again or try your username.', 'woocommerce') );
+    }
+	if (!strpos($_POST['password']," ")) {
+        $validation_errors->add( 'space_passwword_input', __('Incorrect password, please try again !', 'woocommerce') );
+    }
+	if (  strcmp($_POST['password'] , $_POST['password2']) ) {
+        $validation_errors->add( 'confirm-password', __('Passwords do not match.', 'woocommerce') );
+    }
+    if ( !isset( $_POST['email'] ) || $_POST['email'] == '' ) {
+        $validation_errors->add( 'email', __( 'Please enter email address.', 'woocommerce' ) );
+    }
+    if ( !isset( $_POST['password'] ) || $_POST['password'] == '' ) {
+        $validation_errors->add( 'password', __( 'Please enter passwors.', 'woocommerce' ) );
+    }
+	if ( !isset( $_POST['username'] ) || $_POST['username'] == '' ) {
+        $validation_errors->add( 'username', __( 'Please enter username.', 'woocommerce' ) );
+    }
+    
+    return $validation_errors;
+}
+
+add_filter( 'woocommerce_process_registration_errors', 'custom_woocommerce_process_registration_errors', 10, 4 );
+function woocommerce_register_form_password_repeat()
+{
+?>
+	<div class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide input-field">
+		<label for="reg_password2"><?php _e('Confirm password', 'woocommerce'); ?> <span class="required">*</span></label>
+		<input type="password" class="input-text input-trim" name="password2" id="reg_password2" value="" maxlength="30" />
+	</div>
+<?php
+}
+add_action('woocommerce_register_form', 'woocommerce_register_form_password_repeat');
+
+add_shortcode('wc_reg_form', 'separate_registration_form');
+
+function separate_registration_form()
+{
+	if (is_user_logged_in()) return '<p>You are already registered</p>';
+	ob_start();
+	do_action('woocommerce_before_customer_login_form');
+	$html = wc_get_template_html('myaccount/form-login.php');
+	$dom = new DOMDocument();
+	$dom->encoding = 'utf-8';
+	$dom->loadHTML(utf8_decode($html));
+	$xpath = new DOMXPath($dom);
+	$form = $xpath->query('//form[contains(@class,"register")]');
+	$form = $form->item(0);
+	// echo '<div class="woocommerce">';
+	echo '<div class="register-container">';
+	echo $dom->saveXML($form);
+	echo '</div>';
+	// echo '</div>';
+	// wp_enqueue_script('wc-password-strength-meter');
+	return ob_get_clean();
+}
+
+add_shortcode('wc_login_form', 'separate_login_form');
+
+function separate_login_form()
+{
+	if (is_user_logged_in()) return '<p>You are already logged in</p>';
+	ob_start();
+	do_action('woocommerce_before_customer_login_form');
+	$html = wc_get_template_html('myaccount/form-login.php');
+	$dom = new DOMDocument();
+	$dom->encoding = 'utf-8';
+	$dom->loadHTML(utf8_decode($html));
+	$xpath = new DOMXPath($dom);
+	$form = $xpath->query('//form[contains(@class,"login")]');
+	$form = $form->item(0);
+	echo '<div class="login-container">';
+	//    woocommerce_login_form( array( 'redirect' => wc_get_page_permalink( 'myaccount' ) ) );
+	echo $dom->saveXML($form);
+	echo '</div>';
+	return ob_get_clean();
+}
+add_shortcode('wc_lost_passwword_form', 'separate_lost_passwword_form');
+
+// function separate_lost_passwword_form()
+// {
+// 	if (is_user_logged_in()) return '<p>You are already logged in</p>';
+// 	ob_start();
+// 	do_action('woocommerce_before_lost_password_form');
+// 	$html = wc_get_template_html('myaccount/form-lost-password.php');
+// 	$dom = new DOMDocument();
+// 	$dom->encoding = 'utf-8';
+// 	$dom->loadHTML(utf8_decode($html));
+// 	$xpath = new DOMXPath($dom);
+// 	$form = $xpath->query('//form[contains(@class,"lost_reset_password")]');
+// 	$form = $form->item(0);
+// 	echo '<div class="lost-reset-password-container">';
+// 	//    woocommerce_login_form( array( 'redirect' => wc_get_page_permalink( 'myaccount' ) ) );
+// 	echo $dom->saveXML($form);
+// 	echo '</div>';
+// 	do_action( 'woocommerce_after_reset_password_form' );
+// 	return ob_get_clean();
+// }
+function wdm_lostpassword_url()
+{
+	return site_url('/lost-password');
+}
+add_filter('lostpassword_url', 'wdm_lostpassword_url', 10, 0);
+
+add_action('template_redirect', 'redirect_login_registration_if_logged_in');
+function woocommerce_new_pass_redirect($user)
+{
+	wc_add_notice(__('Your password has been changed successfully! Please login to continue.', 'woocommerce'), 'success');
+	wp_redirect(home_url() . "/login");
+	exit;
+}
+add_action('woocommerce_customer_reset_password', 'woocommerce_new_pass_redirect');
+
+//Create shortcode for lost password form [lost_password_form]
+function wc_custom_lost_password_form( $atts ) {
+    if ( !empty( $_COOKIE[ "csx-reset-link-set" ] ) && isset( $_COOKIE[ "csx-reset-link-set" ] ) && $_COOKIE[ "csx-reset-link-set" ] === "true" ) { // WPCS: input var ok, CSRF ok.
+        return wc_get_template( 'myaccount/lost-password-confirmation.php' );
+    } elseif ( !empty( $_SESSION[ "csx-show-reset-form" ] ) && isset( $_SESSION[ "csx-show-reset-form" ] ) && $_SESSION[ "csx-show-reset-form" ] === "true" ) {
+        $rp_id = $_SESSION[ "csx-id" ];
+        $rp_key = $_SESSION[ "csx-key" ];
+        if ( isset( $_COOKIE[ 'wp-resetpass-' . COOKIEHASH ] ) && 0 < strpos( $_COOKIE[ 'wp-resetpass-' . COOKIEHASH ], ':' ) ) { // @codingStandardsIgnoreLine
+            list( $rp_id, $rp_key ) = array_map( 'wc_clean', explode( ':', wp_unslash( $_COOKIE[ 'wp-resetpass-' . COOKIEHASH ] ), 2 ) ); // @codingStandardsIgnoreLine
+            $userdata = get_userdata( absint( $rp_id ) );
+            $rp_login = $userdata ? $userdata->user_login : '';
+            $user = WC_Shortcode_My_Account::check_password_reset_key( $rp_key, $rp_login );
+
+            // Reset key / login is correct, display reset password form with hidden key / login values.
+            if ( is_object( $user ) ) {
+				echo '<div class="woocomerce">';
+                return wc_get_template(
+                    'myaccount/form-reset-password.php',
+                    array(
+                        'key' => $rp_key,
+                        'login' => $rp_login,
+                    )
+                );
+				echo '</div>';
+            }
+        }
+    }
+
+    // Show lost password form by default.
+    return wc_get_template(
+        'myaccount/form-lost-password.php',
+        array(
+            'form' => 'lost_password',
+        )
+    );
+}
+add_shortcode( 'lost_password_form', 'wc_custom_lost_password_form' );
+
+//Handling query
+function csx_process_query() {
+
+    if ( isset( $_GET[ 'reset-link-sent' ] ) && $_GET[ 'reset-link-sent' ] === "true" ) {
+        setcookie( 'csx-reset-link-set', "true", time() + ( 600 * 1 ), "/" ); //Allow to submit email for reset after 10 minutes only.
+        unset( $_SESSION[ "csx-show-reset-form" ] );
+    }
+
+    if ( isset( $_GET[ 'show-reset-form' ] ) && $_GET[ 'show-reset-form' ] === "true" ||
+        isset( $_GET[ 'key' ] ) && isset( $_GET[ 'id' ] ) ) {
+        $_SESSION[ "csx-show-reset-form" ] = "true";
+        setcookie( 'csx-reset-link-set', "", time() - 600, "/" );
+    }
+
+    //Set session and cookie if key and id are existed
+    if ( isset( $_GET[ 'key' ] ) && isset( $_GET[ 'id' ] ) ) {
+        $_SESSION[ "csx-key" ] = $_GET[ 'key' ];
+        $_SESSION[ "csx-id" ] = $_GET[ 'id' ];
+
+        $value = sprintf( "%s:%s", wp_unslash( $_GET[ 'id' ] ), wp_unslash( $_GET[ 'key' ] ) );
+        WC_Shortcode_My_Account::set_reset_password_cookie( $value );
+    }
+
+    //Unset session and cookie after successfully changed the password.
+    if ( isset( $_GET[ 'new-password-created' ] ) && $_GET[ 'new-password-created' ] === "true" ) {
+        setcookie( 'wp-resetpass-' . COOKIEHASH, "", time() - 600 );
+        unset( $_SESSION[ "csx-show-reset-form" ] );
+        unset( $_SESSION[ "csx-reset-link-set" ] );
+        unset( $_SESSION[ "csx-id" ] );
+        unset( $_SESSION[ "csx-key" ] );
+    }
+}
+add_action( 'init', 'csx_process_query' );
+
+//Redirect to custom lost password on request
+// function csx_redirections() {
+//     if ( isset( $_GET[ 'reset-link-sent' ] ) || isset( $_GET[ 'show-reset-form' ] ) ||
+//         isset( $_GET[ 'key' ] ) && isset( $_GET[ 'id' ] ) ) {
+//         wp_redirect( home_url() . '/lost-password' );
+//         exit;
+//     }
+// }
+// add_action( 'template_redirect', 'csx_redirections' );
+
+
+
+
+function redirect_login_registration_if_logged_in()
+{
+	if (is_page() && is_user_logged_in() && (has_shortcode(get_the_content(), 'wc_login_form') || has_shortcode(get_the_content(), 'wc_reg_form') || has_shortcode(get_the_content(), 'lost_password_form'))) {
+		wp_safe_redirect(wc_get_page_permalink('myaccount'));
+		exit;
+	}
+}
+
+add_action('template_redirect', 'redirect_login_registration_if_not_logged_in');
+function redirect_login_registration_if_not_logged_in()
+{
+	if (is_page() && !is_user_logged_in() && (has_shortcode(get_the_content(), 'woocommerce_my_account'))) {
+		wp_safe_redirect("/login");
+		exit;
+	}
+}
+// add_filter( 'woocommerce_min_password_strength', 'misha_change_password_strength' );
+
+// function misha_change_password_strength( $strength ) {
+// 	 return 3;
+// }
+// add_filter( 'woocommerce_get_script_data', 'misha_strength_meter_settings', 20, 2 );
+
+// function misha_strength_meter_settings( $params, $handle  ) {
+
+// 	if( 'wc-password-strength-meter' === $handle ) {
+// 		$params[ 'i18n_password_error' ] = 'Do not you want to be protected? Make it stronger!';
+// 		$params[ 'i18n_password_hint' ] = 'Password should be at least 12 characters long and complicated';
+// 	}
+	
+// 	return $params;
+
+// }

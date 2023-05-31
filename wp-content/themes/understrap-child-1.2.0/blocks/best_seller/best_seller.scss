@@ -1,7 +1,7 @@
 .best-seller-wrapper {
   width: 100%;
   background: #274c5b;
-  padding: 200px 260px;
+  padding: 200px 13%;
   @media screen and (max-width: 1400px) {
     padding: 80px 8%;
   }
@@ -161,6 +161,11 @@
   width: 100%;
   border-bottom: 1px solid #dedddd;
 }
+.price{
+  padding-top: 6px;
+  padding-bottom: 32px;
+}
+
 .origin-price {
   font-family: "Open Sans";
   font-style: normal;

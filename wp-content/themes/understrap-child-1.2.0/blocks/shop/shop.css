@@ -136,7 +136,8 @@
 }
 
 .price {
-  padding-bottom: 15px;
+  padding-top: 6px;
+  padding-bottom: 32px;
 }
 
 .origin-price {
@@ -198,7 +199,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   margin-top: 176px;
-  padding: 0 13.5%;
+  padding: 0 13%;
 }
 @media screen and (max-width: 1400px) {
   .shop-wrapper {
@@ -239,7 +240,10 @@
 }
 
 .pagination {
+  margin-top: 100px;
   margin-bottom: 228px;
+  -webkit-transform: translateX();
+          transform: translateX();
 }
 
 .sort-container {
@@ -254,4 +258,23 @@
 
 .next {
   padding-left: 18px;
+}
+
+.woocommerce-ordering {
+  width: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.woocommerce-ordering label {
+  width: 30%;
+}
+.woocommerce-ordering .orderby {
+  width: 70%;
 }

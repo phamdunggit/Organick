@@ -44,6 +44,8 @@ $params = array(
 $products = wc_get_products($params);
 
 $navigation = get_field('navigation');
+$sub_heading = get_field('sub-heading');
+$heading = get_field('heading');
 // echo "<pre>";
 // var_dump($navigation);
 // var_dump($catalog_orderby_options);
@@ -58,23 +60,26 @@ $navigation = get_field('navigation');
 <div class="shop-wrapper">
     
     <div class="shop-header">
+        <?php if(!$sub_heading && !$heading): else: ?>
         <div class="shop-heading">
-            <p class="shop-sub-heading">Categories</p>
-            <h1 class="shop-heading">Our Products</h1>
+            <p class="shop-sub-heading"><?php echo $sub_heading ?></p>
+            <h1 class="shop-heading"><?php echo $heading ?></h1>
         </div>
+        <?php endif ?>
     </div>
     <?php if($sort==2): else : ?>
     <div class="sort-container">
         <form class="woocommerce-ordering" method="get">
+            <label for="orderby">Order by:</label>
             <select name="orderby" class="orderby custom-select form-select" aria-label="Shop order">
                 <option value="total_sales" <?php if (get_query_var('orderby') == "total_sales" || !get_query_var('orderby')) : echo "selected";
-                                            else : endif; ?>>Sort by popularity</option>
+                                            else : endif; ?>>Popularity</option>
                 <option value="product_date" <?php if (get_query_var('orderby') == "product_date") : echo "selected";
-                                                else : endif; ?>>Sort by latest</option>
+                                                else : endif; ?>>Latest</option>
                 <option value="price_asc" <?php if (get_query_var('orderby') == "price_asc") : echo "selected";
-                                            else : endif; ?>>Sort by price: low to high</option>
+                                            else : endif; ?>>Price: low to high</option>
                 <option value="price-desc" <?php if (get_query_var('orderby') == "price-desc") : echo "selected";
-                                            else : endif; ?>>Sort by price: high to low</option>
+                                            else : endif; ?>>Price: high to low</option>
             </select>
             <input type="hidden" name="paged" value="1">
         </form>
@@ -98,8 +103,8 @@ $navigation = get_field('navigation');
                 <div class="product-info">
                     <h4 class="product-name"><a href="<?php echo get_post_permalink($item->id) ?>"><?php echo $data['name'] ?></a></h4>
                     <div class="price">
-                        <span class="origin-price">$<?php echo round($data['regular_price'], 2) ?></span>
-                        <span class="sale-price">$<?php echo round($data['sale_price'], 2) ?></span>
+                        <span class="origin-price"><?php echo get_woocommerce_currency_symbol() ?><?php echo round($data['regular_price'], 2) ?></span>
+                        <span class="sale-price"><?php echo get_woocommerce_currency_symbol() ?><?php echo round($data['sale_price'], 2) ?></span>
                     </div>
                 </div>
             </div>

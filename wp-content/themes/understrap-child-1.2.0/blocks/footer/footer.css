@@ -6,7 +6,6 @@
 .contact {
   padding-right: 51px;
   text-align: end;
-  border-right: 1px solid #d5d5d5;
 }
 @media screen and (max-width: 768px) {
   .contact {
@@ -44,10 +43,14 @@
 
 .general_information {
   padding: 0 41px;
+  border-right: 1px solid #d5d5d5;
+  border-left: 1px solid #d5d5d5;
 }
 @media screen and (max-width: 768px) {
   .general_information {
     border-bottom: 1px solid #d5d5d5;
+    border-right: none;
+    border-left: none;
   }
 }
 
@@ -98,7 +101,6 @@
 
 .utility_pages {
   height: 90%;
-  border-left: 1px solid #D5D5D5;
   padding-left: 50px;
 }
 @media screen and (max-width: 768px) {
@@ -131,6 +133,18 @@
   font-weight: 400;
   font-size: 18px;
   color: #525c60;
+}
+
+.first-col {
+  padding: 0;
+}
+
+.second-col {
+  padding: 0;
+}
+
+.third-col {
+  padding: 0;
 }
 
 @media screen and (max-width: 768px) {

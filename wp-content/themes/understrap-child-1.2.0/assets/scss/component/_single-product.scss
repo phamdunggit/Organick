@@ -1,0 +1,404 @@
+.single-product-wrapper {
+  padding: 140px 13%;
+  background-color: #ffffff;
+  @media screen and (max-width: 1400px) {
+    padding: 80px 8%;
+  }
+}
+.single-product-image {
+  position: relative;
+  background: #f9f8f8;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1 ;
+  @media screen and (max-width: 992px) {
+  margin-bottom: 30px;
+  }
+  
+  img {
+    width: 100%;
+    // object-fit: cover;
+    aspect-ratio: 1;
+    // max-width: 591px;
+    @media screen and (max-width: 992px) {
+      width: 76.9%;
+    }
+    
+  }
+  #img-zoom {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    --zoom-x: 50%;
+    --zoom-y: 50%;
+    transform: scale(1.3);
+    pointer-events: none;
+    clip-path: circle(70px at var(--zoom-x) var(--zoom-y));
+    opacity: 0;
+  }
+}
+.single-product-category {
+  position: absolute;
+  top: 38px;
+  left: 35px;
+  padding: 5px 12px;
+  background: #274c5b;
+  border-radius: 8px;
+  color: #ffffff;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  text-align: center;
+}
+.single-product-content {
+  padding-left: 83px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  @media screen and (max-width: 992px) {
+    padding-left: 0px;
+  }
+  
+  .product-name {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 47px;
+    /* identical to box height */
+
+    color: #274c5b;
+    margin-bottom: 9px;
+  }
+  .single-product-price {
+    margin-bottom: 27px;
+    .origin-price {
+      text-decoration: line-through;
+      font-family: "Open Sans";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 20px;
+
+      color: #b8b8b8;
+      margin-right: 6px;
+    }
+    .sale-price {
+      font-family: "Open Sans";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 25px;
+      text-align: center;
+      color: #274c5b;
+    }
+  }
+  .short_description {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 165.4%;
+    /* or 30px */
+    color: #525c60;
+    margin-bottom: 35px;
+  }
+}
+.add-to-cart-form {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  @media screen and (max-width: 768px) {
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  }
+  
+}
+.quantity {
+  label {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    color: #274c5b;
+    margin-right: 22px;
+  }
+  .quantity-input {
+    text-align: center;
+    background: #ffffff;
+    border: 2px solid #274c5b;
+    border-radius: 16px;
+    width: 134px;
+    height: 80px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    color: #274c5b;
+  }
+}
+.add-to-cart-btn {
+  background: #274c5b;
+  border-radius: 16px;
+  width: 213px;
+  height: 80px;
+  border: none;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  color: #ffffff;
+  margin-left: 20px;
+  @media screen and (max-width: 768px) {
+    margin-left: 0;
+  }
+  
+}
+.product-info-btn {
+  margin-top: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  .description-btn {
+    width: 363px;
+    height: 80px;
+    background: #eff6f1;
+    border-radius: 16px;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    text-align: center;
+    color: #274c5b;
+    border: none;
+  }
+  .description-btn.active {
+    background: #274c5b !important;
+    color: #ffffff !important;
+  }
+  .additional-btn {
+    width: 309px;
+    height: 80px;
+    background: #eff6f1;
+    border-radius: 16px;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    text-align: center;
+    color: #274c5b;
+    border: none;
+  }
+  .additional-btn.active {
+    background: #274c5b !important;
+    color: #ffffff !important;
+  }
+}
+.product-description {
+  display: none;
+  margin-top: 27px;
+  padding: 0 8%;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 165.4%;
+  color: #525c60;
+}
+.product-description.show {
+  display: block;
+}
+.additional-info {
+  display: none;
+  margin-top: 27px;
+  padding: 0 8%;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 165.4%;
+  color: #525c60;
+  justify-content: space-evenly;
+  align-items: start;
+  @media screen and (max-width: 992px) {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: start;
+  }
+  
+}
+.additional-info.show {
+  display: flex;
+}
+.product-detail {
+  h3 {
+    margin-bottom: 30px;
+  }
+  p a {
+    color: #274c5b;
+  }
+}
+.nutrition-facts {
+  h3 {
+    margin-bottom: 30px;
+  }
+}
+// .product-wrapper {
+//   display: grid;
+//   grid-template-columns: repeat(4, 1fr);
+//   place-items: center;
+//   gap: 20px;
+//   justify-content: space-between;
+//   // padding-bottom: 122px;
+//   @media screen and (max-width: 1400px) {
+//     padding-bottom: 80px;
+//   }
+
+//   @media screen and (max-width: 992px) {
+//     grid-template-columns: repeat(2, 1fr);
+//   }
+//   @media screen and (max-width: 576px) {
+//     grid-template-columns: repeat(1, 1fr);
+//   }
+// }
+.product {
+  max-width: 335px;
+  background: #f9f8f8;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+  border-radius: 30px;
+}
+.shop-sub-heading {
+  font-family: "Yellowtail";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  text-align: center;
+  color: #7eb693;
+  margin: 0;
+}
+.shop-heading {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 50px;
+  text-align: center;
+  color: #274c5b;
+  margin-bottom: 40px;
+}
+.product-category {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  background: #274c5b;
+  padding: 5px 12px;
+  color: #ffffff;
+  border-radius: 8px;
+  text-decoration: none;
+  margin: 29px 0 13px 29px;
+}
+.product-image {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  height: auto;
+  width: auto;
+}
+.product-image img {
+  aspect-ratio: 1;
+  width: 335px;
+  height: auto;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.product-info {
+  margin-top: 10px;
+  padding: 17px 30px;
+  width: 100%;
+  height: 67px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.product-name a {
+  word-wrap: break-word;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  color: #274c5b;
+  text-overflow: ellipsis;
+  text-decoration: none;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+.product-name {
+  width: 100%;
+  border-bottom: 1px solid #dedddd;
+  padding: 5px 0 13px 0;
+  margin: 0;
+}
+.price {
+  padding-top: 6px;
+  padding-bottom: 32px;
+}
+.origin-price {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  color: #b8b8b8;
+  text-decoration: line-through;
+  margin-right: 7px;
+}
+.sale-price {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  color: #274c5b;
+}
+.related-products-wrapper {
+  padding: 0;
+  margin-top: 140px;
+  .related-products-heading {
+    h3 {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 800;
+      font-size: 50px;
+      line-height: 59px;
+      /* identical to box height */
+
+      text-align: center;
+
+      color: #274c5b;
+      margin-bottom: 40px;
+    }
+  }
+}
+// input::-webkit-outer-spin-button,
+// input::-webkit-inner-spin-button {
+//   -webkit-appearance: none;
+//   margin: 0;
+// }
+
+// /* Firefox */
+// input[type=number] {
+//   -moz-appearance: textfield;
+// }

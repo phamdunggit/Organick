@@ -1,0 +1,133 @@
+.register-container {
+  width: 100%;
+  max-width: 700px;
+  margin: 100px auto;
+  border: 1px solid #274c5b;
+  padding: 60px 100px;
+  border-radius: 30px;
+  @media screen and (max-width: 546px) {
+    padding: 40px;
+  }
+  h1 {
+    width: 100%;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 50px;
+    color: #274c5b;
+    text-align: center;
+  }
+}
+.register-form {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  label {
+    margin-bottom: 10px;
+    margin-top: 30px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    color: #274c5b;
+    .required {
+      color: #ff0000;
+    }
+  }
+  .input-field {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+.input-text {
+  padding-left: 20px;
+  height: 60px;
+  width: 100%;
+  border-radius: 15px;
+  border: 1px solid #7EB693;
+  font-family: "Roboto";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 18px;
+  color: #000000;
+}
+.input-text:focus-visible {
+  outline: 1px solid #7EB693;
+}
+.woocommerce-privacy-policy-text {
+  margin: 30px auto 0;
+  // margin-top: 30px;
+  width: 80%;
+  text-align: center;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 165.4%;
+  color: #525c60;
+  p {
+    margin: 0;
+  }
+}
+.register-btn-container {
+  width: 100%;
+  .register-btn {
+    margin-top: 30px;
+    width: 100%;
+    height: 60px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    color: #ffffff;
+    background: #274c5b;
+    border-radius: 16px;
+    border: none;
+  }
+}
+.alternative-login {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  p {
+    color: #274c5b;
+    a {
+      color: #0061ff !important;
+    }
+  }
+}
+.woocommerce-password-strength {
+  text-align: center;
+  font-weight: 600;
+  padding: 3px 0.5em;
+  font-size: 1em;
+  width: 100%;
+  border-radius: 10px;
+}
+.woocommerce-password-hint {
+  margin: 30px auto;
+  // margin-top: 30px;
+  width: 100%;
+  // text-align: center;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 165.4%;
+  color: #525c60;
+  margin: 0;
+}
+label.error{
+  margin-top: 5px;
+  color: #ff0000;
+}

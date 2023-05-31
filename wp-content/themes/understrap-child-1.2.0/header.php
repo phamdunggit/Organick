@@ -22,7 +22,7 @@ $navbar_type       = get_theme_mod('understrap_navbar_type', 'collapse');
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<?php wp_head(); ?>
-	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto:wght@400;700;900&family=Yellowtail&display=swap" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto:wght@400;500;700;900&family=Yellowtail&display=swap" rel="stylesheet" />
 </head>
 
 <body <?php body_class(); ?> <?php understrap_body_attributes(); ?>>
@@ -95,7 +95,7 @@ $navbar_type       = get_theme_mod('understrap_navbar_type', 'collapse');
 					
 					<?php if (is_user_logged_in()) : ?>
 								<div class="loged-in">
-									<div class="dropdown text-end">
+									<div class="avatar text-end">
 										<a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="avata-user" data-bs-toggle="dropdown" aria-expanded="false">
 											<img src="<?php echo get_avatar_url(get_current_user_id()); ?>" alt="mdo" width="64" height="64" class="rounded-circle">
 										</a>
@@ -107,14 +107,14 @@ $navbar_type       = get_theme_mod('understrap_navbar_type', 'collapse');
 											<li>
 												<hr class="dropdown-divider">
 											</li>
-											<li><a class="dropdown-item" href="<?php echo wp_logout_url(home_url()) ?>">Logout</a></li>
+											<li><a class="dropdown-item" href="<?php echo wp_logout_url('/login') ?>">Logout</a></li>
 										</ul>
 									</div>
 
 								</div>
 							<?php else : ?>
-								<div class="login">
-									<a href="/my-account"><span>Login</span></a>
+								<div class="login-btn">
+									<a href="/login"><span>Login</span></a>
 								</div>
 							<?php endif; ?>
 

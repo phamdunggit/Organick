@@ -71,7 +71,7 @@
   margin-top: 45px;
   display: flex;
   // grid-template-columns: repeat(2, 1fr);
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 46px;
   @media screen and (max-width: 992px) {
