@@ -1,0 +1,28 @@
+.archive-product-wrapper{
+    padding: 0 13%;
+    margin-top: 177px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    @media screen and (max-width: 1400px) {
+        padding: 0 8%;
+        margin-top: 80px;
+    }
+}
+.archive-product-header{
+    box-shadow: 0px 14px 36px rgba(204, 204, 204, 0.25);
+    background: #ffffff;
+    border-radius: 30px;
+    padding: 97px 83px;
+    margin-bottom: 68px;
+    width: 100%;
+    h1 {
+        @include h2 ;
+        color: $primary-color;
+        margin-bottom: 20px;
+    }
+    p {
+        @include p ;
+    }
+}

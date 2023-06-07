@@ -30,7 +30,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 			?>
 
 			<main class="site-main" id="main">
-            <h1>hello</h1>
 				<?php
 				if ( have_posts() ) {
 					// Start the Loop.

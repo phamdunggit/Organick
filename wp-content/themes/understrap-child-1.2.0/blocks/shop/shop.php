@@ -1,12 +1,12 @@
 <?php
 global $paged;
 $number = get_field('number');
-$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+$paged = (get_query_var('pg')) ? get_query_var('pg') : 1;
 $order = "desc";
 $metakey;
 $orderby_query = (get_query_var('orderby')) ? get_query_var('orderby') : "total_sales";
 $sort = get_field('sort_by');
-$sort_by=($orderby_query=="product_date")? "date" : "meta_value_num";
+$sort_by=($orderby_query=="product_date") ? "date" : "meta_value_num";
 switch ($orderby_query) {
     case "total_sales":
         $metakey="total_sales";
@@ -81,13 +81,11 @@ $heading = get_field('heading');
                 <option value="price-desc" <?php if (get_query_var('orderby') == "price-desc") : echo "selected";
                                             else : endif; ?>>Price: high to low</option>
             </select>
-            <input type="hidden" name="paged" value="1">
+            <input type="hidden" name="pg" value="1">
         </form>
     </div>
     <?php endif; ?>
     <div class="product-wrapper">
-
-
         <?php
         //display products
         foreach ($products->products as $item) {
@@ -103,8 +101,8 @@ $heading = get_field('heading');
                 <div class="product-info">
                     <h4 class="product-name"><a href="<?php echo get_post_permalink($item->id) ?>"><?php echo $data['name'] ?></a></h4>
                     <div class="price">
-                        <span class="origin-price"><?php echo get_woocommerce_currency_symbol() ?><?php echo round($data['regular_price'], 2) ?></span>
-                        <span class="sale-price"><?php echo get_woocommerce_currency_symbol() ?><?php echo round($data['sale_price'], 2) ?></span>
+                        <span class="origin-price"><?php if(!$data['regular_price']): else: echo get_woocommerce_currency_symbol()." ".round($data['regular_price'], 2); endif ?></span>
+                        <span class="sale-price"><?php if(!$data['sale_price']): echo get_woocommerce_currency_symbol()." ".round($data['regular_price'], 2); else: echo get_woocommerce_currency_symbol()." ". round($data['sale_price'], 2); endif;  ?></span>
                     </div>
                 </div>
             </div>
@@ -113,21 +111,21 @@ $heading = get_field('heading');
     <?php
     if ($navigation == 1) :
     ?>
-        <a class="load-more-btn" href="<?php echo get_permalink(wc_get_page_id('shop')); ?>">Load more
+        <a class="load-more-btn" href="/shop">Load more
             <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="9.5" cy="9.5" r="9.5" fill="#335B6B" />
                 <path d="M9.47641 6.12891L12.871 9.19342L9.47641 12.2579M12.3995 9.19342H5.51611" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
         </a>
     <?php
-    else :
-        $big = 999999999;  // need an unlikely integer
+    else : // need an unlikely integer
     ?>
         <div class="pagination">
             <?php
+            $big = 999999999; 
             echo paginate_links(array(
                 // 'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
-                'format'        =>  '?paged=%#%',
+                'format'        =>  '?pg=%#%',
                 'current' => $paged,
                 'total' => $products->max_num_pages,
                 'prev_text' => '<i class="fa fa-chevron-left" aria-hidden="true"></i>',

@@ -60,8 +60,8 @@ $container = get_theme_mod('understrap_container_type');
             <div class="col-md-12 col-lg-7 single-product-content">
                 <h2 class="product-name"><?php echo $product['name'] ?></h2>
                 <div class="single-product-price">
-                    <span class="origin-price"><?php echo get_woocommerce_currency_symbol() ?><?php echo round($product['regular_price'], 2) ?></span>
-                    <span class="sale-price"><?php echo get_woocommerce_currency_symbol() ?><?php echo round($product['sale_price'], 2) ?></span>
+                    <span class="origin-price"><?php if(!$product['regular_price']): else: echo get_woocommerce_currency_symbol()." ".round($product['regular_price'], 2); endif ?></span>
+                    <span class="sale-price"><?php if(!$product['sale_price']): echo get_woocommerce_currency_symbol()." ".round($product['regular_price'], 2); else: echo get_woocommerce_currency_symbol()." ".round($product['sale_price'], 2); endif ?></span>
                 </div>
                 <div class="short_description"><?php echo $product['short_description'] ?></div>
                 <form class="add-to-cart-form" action="<?php echo "/" . $product['slug'] ?>" method="post" enctype="multipart/form-data">
@@ -121,7 +121,7 @@ $container = get_theme_mod('understrap_container_type');
                 <div class="related-products-heading">
                     <h3>Related Products</h3>
                 </div>
-                <div class="product-wrapper">
+                <div class="product-container">
                     <div class="owl-carousel related-product-carousel owl-theme">
                         <?php if(!$related_products): else:
                          foreach ($related_products as $item) {

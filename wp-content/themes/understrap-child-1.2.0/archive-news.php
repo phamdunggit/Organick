@@ -1,53 +1,62 @@
 <?php
-$heading = get_field('heading');
-$sub_heading = get_field('sub_heading');
-$num_of_news = get_field('number');
-$pagination = get_field('pagination');
-$paged = (get_query_var('pg')) ? get_query_var('pg') : 1;
-$args = array(
-    // 'numberposts' => 2,
-    'post_type'   => 'news',
-    'posts_per_page' => $num_of_news,
-    'order'       => 'DESC',
-    'orderby'     => 'date',
-    'paginate' => true,
-    'paged' => $paged
-);
-$news = new WP_Query($args);
-$big = 999999999; // need an unlikely integer
-// echo "<pre>";
-// var_dump($news['0']);
-// var_dump(get_post_permalink(280));
-// var_dump(get_the_date('', 280));
-// echo "</pre>";
-// echo substr(get_the_date('', 280),4,2);
-?>
-<div class="news-wrapper">
-    <div class="news-top">
-        <div class="news-heading">
-            <h2><?php echo $heading ?></h2>
-            <p><?php echo $sub_heading ?></p>
 
+/**
+ * The template for displaying all pages
+ *
+ * This is the template that displays all pages by default.
+ * Please note that this is the WordPress construct of pages
+ * and that other 'pages' on your WordPress site will use a
+ * different template.
+ *
+ * @package Understrap
+ */
+
+// Exit if accessed directly.
+defined('ABSPATH') || exit;
+
+get_header();
+
+$container = get_theme_mod('understrap_container_type');
+$news_banner = get_field('news_banner', 'option');
+// var_dump($banner_image_background);
+?>
+
+<div class="wrapper" id="page-wrapper">
+    <?php if (!$news_banner) :
+    else :
+    ?>
+        <div class="banner" style="background-image:url(<?php echo $news_banner['url'] ?>);">
+            <h1 class="banner-title">Recent News</h1>
         </div>
-        <?php if ($pagination == 2) : ?>
-            <a class="news-load-more-btn" href="<?php echo get_post_type_archive_link('news'); ?>">More News
-                <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="9.5" cy="9.5" r="9.5" fill="#335B6B" />
-                    <path d="M9.47641 6.12891L12.871 9.19342L9.47641 12.2579M12.3995 9.19342H5.51611" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-            </a>
-        <?php endif; ?>
-    </div>
-    <div class="list-news">
-        <?php foreach ($news->posts as $item) { ?>
-            <div class="news">
+    <?php endif; ?>
+    <?php
+    $paged = (get_query_var('pg')) ? get_query_var('pg') : 1;
+    $args = array(
+        // 'numberposts' => 2,
+        'post_type'   => 'news',
+        'posts_per_page' => 2,
+        'order'       => 'DESC',
+        'orderby'     => 'date',
+        'paginate' => true,
+        'paged' => $paged
+    );
+    $news = new WP_Query($args);
+    // echo '<pre>';
+    // var_dump($paged);
+    // echo '</pre>';
+    ?>
+    <div class="news-wrapper">
+        <div class="list-news">
+            <?php foreach ($news->posts as $item) { ?>
+                <div class="news">
+                    <a href="<?php echo get_post_permalink($item->ID) ?>">
+                        <img src="<?php echo get_the_post_thumbnail_url($item->ID) ?>" alt="" class="news-img">
+                    </a>
                     <div class="date">
                         <span class="day"><?php echo substr(get_the_date('', $item->ID), 4, 2) ?></span>
                         <span class="month"><?php echo substr(get_the_date('', $item->ID), 0, 3) ?></span>
                     </div>
-                    <div class="news-img">
-                        <img src="<?php echo get_the_post_thumbnail_url($item->ID) ?>" alt="">
-                    </div>
+
                     <div class="news-info">
                         <div class="author-news">
                             <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -56,12 +65,13 @@ $big = 999999999; // need an unlikely integer
                             <p class="author-name"><?php echo get_the_author_meta('display_name', $item->post_author); ?></p>
                         </div>
                         <div class="news-short-content">
-                        <a href="<?php echo get_post_permalink($item->ID) ?>">
-                            <h3><?php echo $item->post_title; ?></h3>
-                        </a>
-                        <a href="<?php echo get_post_permalink($item->ID) ?>">
-                            <p><?php echo $item->post_excerpt; ?></p>
-                        </a>
+                            <a href="<?php echo get_post_permalink($item->ID) ?>">
+                                <h3><?php echo $item->post_title; ?></h3>
+                            </a>
+                            <a href="<?php echo get_post_permalink($item->ID) ?>">
+                                <p><?php echo $item->post_excerpt; ?></p>
+                            </a>
+
                             <a href="<?php echo get_post_permalink($item->ID) ?>" class="news-read-more-btn">
                                 Read More
                                 <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -71,11 +81,10 @@ $big = 999999999; // need an unlikely integer
                             </a>
                         </div>
                     </div>
-            </div>
-        <?php } ?>
-    </div>
-    <?php if ($pagination == 1) : ?>
-        <div class="pagination">
+                </div>
+            <?php } ?>
+        </div>
+        <div class="pagination-news">
             <?php
             $big = 999999999;
             echo paginate_links(array(
@@ -89,8 +98,11 @@ $big = 999999999; // need an unlikely integer
             wp_reset_postdata();
             ?>
         </div>
+    </div>
     <?php
-    else :
-    endif;
+    get_template_part('global-templates/newsletter');
     ?>
 </div>
+
+<?php
+get_footer();

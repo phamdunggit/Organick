@@ -1,0 +1,196 @@
+.services-container {
+  padding: 202px 13%;
+  background: #f9f8f8;
+  background-size: cover;
+  background-position: center;
+}
+@media screen and (max-width: 1400px) {
+  .services-container {
+    padding: 100px 8%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .services-container {
+    background-image: none !important;
+  }
+}
+
+.services-column-1 {
+  text-align: end;
+  padding: 0;
+  padding-right: 30px;
+}
+@media screen and (max-width: 1400px) {
+  .services-column-1 {
+    padding-right: 60px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .services-column-1 {
+    text-align: start;
+    padding-right: 0px;
+  }
+}
+
+.services-column-2 {
+  padding: 0;
+  padding-left: 30px;
+}
+@media screen and (max-width: 1400px) {
+  .services-column-2 {
+    padding-left: 60px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .services-column-2 {
+    text-align: start;
+    padding-left: 0px;
+  }
+}
+
+.services-heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 35px;
+}
+.services-heading .sub-heading {
+  font-family: "Yellowtail";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  color: #7eb693;
+  margin-bottom: 5px;
+}
+.services-heading .heading {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 50px;
+  color: #274C5B;
+  max-width: 636px;
+  text-align: center;
+}
+
+.service-image {
+  padding: 0;
+}
+@media screen and (max-width: 992px) {
+  .service-image {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+  }
+}
+.service-image img {
+  display: none;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (max-width: 992px) {
+  .service-image img {
+    display: block;
+  }
+}
+
+.service .icon {
+  margin-bottom: 5px;
+}
+.service .icon img {
+  aspect-ratio: 1;
+  width: 55px;
+}
+.service h2 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 25px;
+  color: #274C5B;
+  margin-bottom: 5px;
+}
+.service p {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 165.4%;
+  color: #525c60;
+  max-width: 415px;
+}
+@media screen and (max-width: 992px) {
+  .service p {
+    max-width: 100%;
+  }
+}
+
+.services {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 40px;
+}
+
+.explore-more-container {
+  margin-top: 80px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.explore-more-btn {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  border-radius: 16px;
+  padding: 28px 39px;
+  color: #274C5B;
+  border: 2px solid #335B6B;
+  background: #F9F8F8;
+}
+
+.services-container-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}

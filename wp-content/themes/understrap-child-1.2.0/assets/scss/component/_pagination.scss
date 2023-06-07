@@ -1,0 +1,35 @@
+.page-numbers {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    color: #274c5b;
+    padding: 15px;
+    border: 1px solid #000000;
+    margin-right: 10px;
+    border-radius: 50%;
+    text-decoration: none;
+    background: #ffffff;
+    aspect-ratio: 1;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .page-numbers.current {
+    color: #ffffff;
+    background-color: #274c5b;
+  }
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+  }
+  .prev {
+    padding-right: 18px;
+  }
+  .next {
+    padding-left: 18px;
+  }

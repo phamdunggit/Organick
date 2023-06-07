@@ -12,11 +12,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  aspect-ratio: 1 ;
+  aspect-ratio: 1;
   @media screen and (max-width: 992px) {
-  margin-bottom: 30px;
+    margin-bottom: 30px;
   }
-  
+
   img {
     width: 100%;
     // object-fit: cover;
@@ -25,7 +25,6 @@
     @media screen and (max-width: 992px) {
       width: 76.9%;
     }
-    
   }
   #img-zoom {
     position: absolute;
@@ -65,7 +64,7 @@
   @media screen and (max-width: 992px) {
     padding-left: 0px;
   }
-  
+
   .product-name {
     font-family: "Roboto";
     font-style: normal;
@@ -114,11 +113,10 @@
   justify-content: center;
   align-items: start;
   @media screen and (max-width: 768px) {
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
   }
-  
 }
 .quantity {
   label {
@@ -160,7 +158,6 @@
   @media screen and (max-width: 768px) {
     margin-left: 0;
   }
-  
 }
 .product-info-btn {
   margin-top: 90px;
@@ -235,7 +232,6 @@
     align-items: center;
     justify-content: start;
   }
-  
 }
 .additional-info.show {
   display: flex;
@@ -314,8 +310,9 @@
   display: flex;
   flex-direction: column;
   gap: 13px;
-  height: auto;
-  width: auto;
+  width: 100%;
+  max-width: 335px;
+  aspect-ratio: 1;
 }
 .product-image img {
   aspect-ratio: 1;

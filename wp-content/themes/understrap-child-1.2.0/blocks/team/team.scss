@@ -1,8 +1,9 @@
 .team-container {
-  padding: 177px 13%;
+  padding: 0 13%;
+  margin-top: 177px;
   background: #ffffff;
   @media screen and (max-width: 1400px) {
-    padding: 177px 8%;
+    padding: 0 8%;
   }
   
 }
@@ -40,12 +41,13 @@
   }
 }
 .team-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(3,1fr);
   gap: 27px;
   @media screen and (max-width: 992px) {
-    flex-wrap: wrap;
+    grid-template-columns: repeat(1,1fr);
   }
   
 }

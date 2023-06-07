@@ -1,10 +1,11 @@
 .team-container {
-  padding: 177px 13%;
+  padding: 0 13%;
+  margin-top: 177px;
   background: #ffffff;
 }
 @media screen and (max-width: 1400px) {
   .team-container {
-    padding: 177px 8%;
+    padding: 0 8%;
   }
 }
 
@@ -52,21 +53,15 @@
 }
 
 .team-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(3, 1fr);
   gap: 27px;
 }
 @media screen and (max-width: 992px) {
   .team-wrapper {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 

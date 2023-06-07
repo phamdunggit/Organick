@@ -2,17 +2,26 @@
 $show_all = get_field('show_all');
 $team;
 // $temp=get_field('image','498');
-$args = array(
-    'post_type' => 'team',
-    'posts_per_page' => -1, // Set to -1 to get all posts
-    'fields' => 'ids',
-);
+$paged = (get_query_var('pg')) ? get_query_var('pg') : 1;
+
 
 if ($show_all == 2) :
     $team = get_field('team');
 else :
+    $pagination=get_field('pagination');
+    $post_per_page= ($pagination["pagination"]==1) ? $pagination["members_per_page"] : -1;
+    $args = array(
+        'post_type' => 'team',
+        'posts_per_page' => $post_per_page, // Set to -1 to get all posts
+        'fields' => 'ids',
+        'paginate' => true,
+        'paged' => $paged
+    );
     $get_all_team = new WP_Query($args);
     $team = $get_all_team->posts;
+    // echo '<pre>';
+    // var_dump($get_all_team->max_num_pages);
+    // echo '</pre>';
 endif;
 
 // echo "<pre>";
@@ -50,6 +59,25 @@ endif;
                 </div>
             <?php } ?>
         </div>
+        <?php if ($pagination["pagination"]==1) : ?>
+        <div class="pagination">
+            <?php
+            $big = 999999999;
+            echo paginate_links(array(
+                // 'base' => str_replace($big, '%#%', get_pagenum_link($big)),
+                'format'        =>  '?pg=%#%',
+                'current' => $paged,
+                'total' => $get_all_team->max_num_pages,
+                'prev_text' => '<i class="fa fa-chevron-left" aria-hidden="true"></i>',
+                'next_text' => '<i class="fa fa-chevron-right" aria-hidden="true"></i>'
+            ));
+            wp_reset_postdata();
+            ?>
+        </div>
+    <?php
+    else :
+    endif;
+    ?>
         <div class="list-modal">
             <?php foreach ($team as $member) { ?>
                 <div class="modal modal-xl fade" id="exampleModal<?php echo $member ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

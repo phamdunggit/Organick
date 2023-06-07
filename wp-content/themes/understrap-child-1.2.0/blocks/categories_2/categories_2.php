@@ -29,7 +29,7 @@ endif;
 ?>
 <div class="categories-wrapper">
     <div class="cate-top">
-        <span ><?php echo $sub_heading ?></span>
+        <span><?php echo $sub_heading ?></span>
         <h2><?php echo $heading ?></h2>
     </div>
     <div class="list-cate">
@@ -38,6 +38,13 @@ endif;
         ?>
             <div class="category">
                 <div class="cate-img">
+                    <a href="<?php echo get_category_link($cate->term_id); ?>" class="image-hover">
+                    <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="23" cy="23" r="23" fill="#7EB693"/>
+<path d="M21 28L26.5 22.5L21 17" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                    </a>
                     <a href="<?php echo get_category_link($cate->term_id); ?>"><img src="<?php echo wp_get_attachment_image_url($cate_img_id, 'full') ?>" alt=""></a>
                 </div>
 

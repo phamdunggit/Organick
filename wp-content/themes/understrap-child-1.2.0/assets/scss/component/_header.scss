@@ -282,36 +282,7 @@ a {
   padding-right: 0;
   padding-left: 0;
 }
-.banner {
-  min-height: 450px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  // @media screen and (min-width: 1920px) {
-  //   background-size: cover;
-  // }
-  @media screen and (max-width: 992px) {
-    min-height: 300px;
-  }
-  @media screen and (max-width: 567px){
-    min-height: 200px;
-  }
-}
 
-.banner-title {
-  // padding: 0 184px;
-  text-align: center;
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 800;
-  font-size: clamp(2.1875rem, 1.3182rem + 2.5473vw, 4.375rem);
-  color: #274c5b;
-  // @media screen and (max-width: 567px){
-  //   font-size: 40px;
-  // }
-}
 .row {
   width: 100%;
   --bs-gutter-x: 1.5rem;

@@ -12,6 +12,7 @@
   margin: 0 !important;
 }
 .newsletter-content {
+  margin-top: 144px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -88,9 +89,12 @@
 .wpcf7 textarea:focus {
   color: #212529;
   background-color: #ffffff;
-  border-color: #ffffff;
+  border-color: #7EB693;
   outline: 0;
   box-shadow: none;
+}
+.woocommerce form .form-row.woocommerce-validated .select2-container, .woocommerce form .form-row.woocommerce-validated input.input-text, .woocommerce form .form-row.woocommerce-validated select {
+  border-color: #7EB693;
 }
 .newsletter-submit-btn {
   font-family: "Roboto" !important;
