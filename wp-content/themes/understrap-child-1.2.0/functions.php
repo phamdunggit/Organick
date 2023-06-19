@@ -255,14 +255,13 @@ function my_acf_blocks_init()
 				wp_enqueue_style('footer-css', get_stylesheet_directory_uri() . '/blocks/footer/footer.css');
 			},
 		));
-
 		acf_register_block_type(array(
-			'name'              => 'custom_why_choose_us_layout',
-			'title'             => __('Custom Why Choose Us'),
-			'description'       => __('A Why Choose Us Layout.'),
-			'render_template'   => 'blocks/why_choose_us/why_choose_us.php',
+			'name'              => 'custom_banner_layout',
+			'title'             => __('Custom Banner'),
+			'description'       => __('A banner Layout.'),
+			'render_template'   => 'blocks/banner/banner.php',
 			'category'          => 'widgets',
-			'icon'   => 'saved',
+			'icon'   => 'embed-photo',
 			'enqueue_assets' => function () {
 				wp_enqueue_style('why_choose_us-css', get_stylesheet_directory_uri() . '/blocks/why_choose_us/why_choose_us.css');
 			},
@@ -362,14 +361,13 @@ function my_acf_blocks_init()
 add_action('init', 'custom_post_type_init');
 function custom_post_type_init()
 {
-	//register news post type 
-	$labels_news = array(
+	$labels = array(
 		'name'                  => _x('News', 'Post type general name', 'textdomain'),
 		'singular_name'         => _x('News', 'Post type singular name', 'textdomain'),
 		'menu_name'             => _x('News', 'Admin Menu text', 'textdomain'),
 	);
 	$args_news = array(
-		'labels'             => $labels_news,
+		'labels'             => $labels,
 		'public'             => true,
 		'publicly_queryable' => true,
 		'show_ui'            => true,
