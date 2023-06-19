@@ -1,0 +1,97 @@
+.best-seller-wrapper {
+  width: 100%;
+  background: #274c5b;
+  padding: 200px 13%;
+}
+@media screen and (max-width: 1400px) {
+  .best-seller-wrapper {
+    padding: 80px 8%;
+  }
+}
+
+.best-seller-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 50px;
+}
+@media screen and (max-width: 768px) {
+  .best-seller-top {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+  }
+}
+
+.best-seller-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 50%;
+}
+@media screen and (max-width: 768px) {
+  .best-seller-title {
+    width: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.best-seller-title span {
+  font-family: "Yellowtail";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  color: #7eb693;
+}
+@media screen and (min-width: 576px) {
+  .best-seller-title span {
+    font-size: 30px;
+  }
+}
+
+.best-seller-title h2 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 800;
+  font-size: clamp(2.5rem, 2.2516rem + 0.7278vw, 3.125rem);
+  color: #ffffff;
+}
+
+.view-all-btn {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  padding: 28px 39px;
+  color: #274c5b;
+  background: #efd372;
+  border-radius: 16px;
+  text-decoration: none;
+}
+
+.view-all-btn img {
+  width: 19px;
+}

@@ -1,0 +1,28 @@
+.banner {
+    min-height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    // @media screen and (min-width: 1920px) {
+    //   background-size: cover;
+    // }
+    @media screen and (max-width: 992px) {
+      min-height: 300px;
+    }
+    @media screen and (max-width: 567px){
+      min-height: 200px;
+    }
+  }
+  
+  .banner-title {
+    // padding: 0 184px;
+    text-align: center;
+    @include h1;
+    color: $primary-color;
+    // @media screen and (max-width: 567px){
+    //   font-size: 40px;
+    // }
+  }

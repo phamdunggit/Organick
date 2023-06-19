@@ -448,3 +448,7 @@ a {
     font-size: 40px;
   }
 }
+
+.product-wrapper {
+  padding-top: 300px;
+}

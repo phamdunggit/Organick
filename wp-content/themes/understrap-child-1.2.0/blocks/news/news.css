@@ -1,0 +1,102 @@
+.news-wrapper {
+  background: #ffffff;
+  width: 100%;
+  padding: 0 13%;
+  margin-top: 132px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+@media screen and (max-width: 1400px) {
+  .news-wrapper {
+    padding: 80px 8%;
+    margin-top: 80px;
+  }
+}
+
+.news-top {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 45px;
+}
+@media screen and (max-width: 992px) {
+  .news-top {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+  }
+}
+
+.news-heading {
+  width: 50%;
+}
+@media screen and (max-width: 992px) {
+  .news-heading {
+    width: 100%;
+  }
+}
+.news-heading span {
+  font-family: "Yellowtail";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  color: #7eb693;
+  margin: 0;
+}
+.news-heading h2 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 800;
+  font-size: clamp(2.5rem, 2.2516rem + 0.7278vw, 3.125rem);
+  color: #274c5b;
+  margin: 0;
+}
+
+.news-load-more-btn {
+  padding: 23px 45px;
+  background: #ffffff;
+  border: 2px solid #274c5b;
+  border-radius: 16px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  color: #274c5b;
+  text-decoration: none;
+  -ms-flex-item-align: end;
+      align-self: end;
+}
+@media screen and (max-width: 992px) {
+  .news-load-more-btn {
+    margin-top: 30px;
+    -ms-flex-item-align: center;
+        align-self: center;
+  }
+}
+
+.news-link {
+  display: block;
+}

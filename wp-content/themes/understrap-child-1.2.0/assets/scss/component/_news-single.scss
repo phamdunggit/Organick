@@ -1,0 +1,96 @@
+.news-banner-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  flex-direction: column;
+  aspect-ratio: 1920/1115;
+  position: relative;
+}
+.news-banner-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  aspect-ratio: 1920/898;
+  width: 100%;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.news-heading-container {
+  width: 74%;
+  box-shadow: 0px 14px 36px rgba(204, 204, 204, 0.25);
+  background: #ffffff;
+  border-radius: 30px;
+  padding: 97px 83px;
+  z-index: 999;
+  margin-bottom: 80px;
+  @media screen and (max-width: 1400px) {
+    width: 84%;
+    margin-top: 80px;
+  }
+  @media screen and (max-width: 546px) {
+    padding: 40px;
+  }
+  .news-date {
+    margin-right: 30px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    color: #274c5b;
+    b {
+      font-weight: 600;
+    }
+  }
+  .news-author {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    color: #274c5b;
+    svg {
+      margin-right: 8px;
+    }
+  }
+  .post-title {
+    @include h1;
+    color: $primary-color;
+    margin: 20px 0;
+  }
+  .expert-text {
+    @include p;
+  }
+}
+.news-content {
+  padding: 0 25.625%;
+  @media screen and (max-width: 1400px) {
+    padding: 0 18%;
+  }
+  @media screen and (max-width: 992px) {
+    padding: 0 13%;
+  }
+  @media screen and (max-width: 992px) {
+    padding: 0 8%;
+  }
+  
+}
+.news-text {
+  @include p;
+}
+.h2-news {
+  @include h2;
+  color: $primary-color;
+  margin-bottom: 24px;
+}
+.h4-news {
+  @include h4;
+  color: $primary-color;
+  margin-bottom: 22px
+}
+.news-list {
+  margin-top: 6px;
+  @include p;
+}

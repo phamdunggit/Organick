@@ -1,0 +1,135 @@
+@import '../../assets/scss/genaral/mixin';
+@import '../../assets/scss/genaral/variables';
+.about-image {
+  padding-top: 86px;
+  padding-right: 0;
+  @media screen and (max-width: 1400px) {
+  padding-top: 0;
+  }
+  
+}
+.content-about {
+  padding-left: 0;
+  padding-top: 209px;
+  padding-right: 13%;
+  margin-bottom: 162px;
+  @media screen and (max-width: 1400px) {
+    padding-top: 100px;
+    padding-right: 8%;
+  }
+  // @media screen and (max-width: 1200px) {
+  //   padding-top: 60px;
+  //   padding-right:80px
+  // }
+  @media screen and (max-width: 991px) {
+    padding-top: 30px;
+    padding-left:8%;
+    margin-bottom: 80px;
+  }
+  @media screen and (max-width: 576px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  
+  
+}
+.sub-heading {
+  font-family: "Yellowtail";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  color: #7eb693;
+  margin-bottom: 8px;
+}
+.about-heading {
+  max-width: 506px;
+  @include h2;
+  margin-bottom: 14px;
+}
+.about-text {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 165.4%;
+  color: #525c60;
+  margin-bottom: 48px;
+}
+.list-about {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  column-gap: 0px;
+  row-gap: 30px;
+  margin-bottom: 46px;
+  @media screen and (max-width: 1200px) {
+    flex-direction: column;
+  }
+  @media screen and (max-width: 991px) {
+    flex-direction: row;
+  }
+  @media screen and (max-width: 576px) {
+    flex-direction: column;
+  }
+}
+.list-about-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 15px;
+  // @media screen and (max-width: 576px) {
+  // flex-wrap: wrap;
+  // }
+  
+}
+.list-icon {
+  height: 100%;
+  aspect-ratio: 1;
+  border-radius: 20px;
+  padding: 23px;
+  max-width: 101px;
+  img {
+    width: 100%;
+  }
+}
+.list-content {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  h3 {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 25px;
+    color: #274c5b;
+    margin: 0;
+  }
+  p {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 165.4%;
+    /* or 30px */
+    color: #525c60;
+    max-width: 421px;
+  }
+}
+.content-btn {
+  display: block;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  color: #ffffff;
+  padding: 28px 39px 29px;
+  width: 226px;
+height: 80px;
+
+  background: #274c5b;
+  border-radius: 16px;
+  text-align: center;
+}

@@ -1,0 +1,296 @@
+.testimonial-wrapper {
+  background-repeat: repeat-y;
+  background-size: contain;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #ffffff;
+  padding: 0 21.2%;
+}
+@media screen and (min-width: 1920px) {
+  .testimonial-wrapper {
+    background-size: cover;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .testimonial-wrapper {
+    padding: 0 13.2%;
+  }
+}
+
+.content {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 164px;
+}
+@media screen and (max-width: 1400px) {
+  .content {
+    margin-top: 80px;
+  }
+}
+
+.testimonial {
+  width: 100%;
+  max-width: 1108px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.heading-testimonial {
+  font-family: "Yellowtail";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  color: #7eb693;
+}
+
+.sub-heading-testimonial {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 800;
+  font-size: clamp(2.5rem, 2.2516rem + 0.7278vw, 3.125rem);
+  text-align: center;
+  color: #274c5b;
+  margin-bottom: 60px;
+}
+
+.testimonial-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.customer-image {
+  margin-bottom: 71px;
+}
+.customer-image img {
+  width: 115px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+.testimonial-text {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 165.4%;
+  color: #525c60;
+  text-align: center;
+  max-width: 780px;
+}
+
+.customer-name {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+  color: #274c5b;
+  margin-bottom: 0;
+}
+
+.customer-position {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 165.4%;
+  color: #525c60;
+  margin-bottom: 129px;
+}
+
+.counters {
+  margin-top: 113px;
+  width: 100%;
+  max-width: 1108px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 84px;
+  padding-bottom: 175px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+@media screen and (max-width: 1400px) {
+  .counters {
+    margin-top: 80px;
+    padding-bottom: 80px;
+    gap: 36px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .counters {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 30px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .counters {
+    gap: 40px;
+  }
+}
+
+.counter {
+  position: relative;
+  width: 189px;
+  border-radius: 50%;
+  background: #f1f1f1;
+  aspect-ratio: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+@media screen and (max-width: 1200px) {
+  .counter {
+    width: 150px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .counter {
+    width: 115px;
+  }
+}
+
+.counter::after {
+  content: "";
+  width: 111%;
+  border-radius: 50%;
+  border: 5px solid #7eb693;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  aspect-ratio: 1;
+}
+
+.counter-index {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 50px;
+  text-align: center;
+  color: #274c5b;
+}
+@media screen and (max-width: 1200px) {
+  .counter-index {
+    font-size: 40px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .counter-index {
+    font-size: 30px;
+  }
+}
+
+.counter-text {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: center;
+  color: #274c5b;
+}
+@media screen and (max-width: 1200px) {
+  .counter-text {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .counter-text {
+    font-size: 12px;
+  }
+}
+
+.carousel-indicators [data-bs-target] {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  margin-right: 3px;
+  margin-left: 3px;
+  text-indent: -999px;
+  cursor: pointer;
+  background: #c4c4c4;
+  background-clip: padding-box;
+  border: 0;
+  opacity: 0.5;
+  -webkit-transition: opacity 0.6s ease;
+  transition: opacity 0.6s ease;
+  border-radius: 50%;
+}
+
+.carousel-indicators .active {
+  opacity: 1;
+  background: #7eb693;
+  height: 8px;
+}
+
+.carousel-indicators {
+  position: absolute;
+  right: 0;
+  bottom: 86px;
+  left: 0;
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0;
+  margin-right: 15%;
+  margin-bottom: 1rem;
+  margin-left: 15%;
+  list-style: none;
+}

@@ -31,10 +31,11 @@ $banner_image_background = get_field('banner_image_background');
     <?php endif; ?>
     <?php
     the_content();
+    
     get_template_part('global-templates/newsletter');
+    
     ?>
-
 </div>
-
+<?php  ?>
 <?php
 get_footer();

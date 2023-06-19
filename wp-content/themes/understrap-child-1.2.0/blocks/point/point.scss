@@ -1,0 +1,51 @@
+.point-container {
+    margin-top: 59px;
+  width: 100%;
+}
+.points {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+.point {
+  background: #f9f8f8;
+  border-radius: 100px;
+  padding: 15px 17px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  // @media screen and (max-width: 768px) {
+  //   flex
+  // }
+  
+  .index {
+    aspect-ratio: 1;
+    width: 69px;
+    height: 69px;
+    border-radius: 50%;
+    background: #7eb693;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .value {
+    font-family: 'Roboto';
+font-style: normal;
+font-weight: 600;
+font-size: 25px;
+color: #274C5B;
+margin-right: 53px;
+@media screen and (max-width: 768px) {
+  margin-right: 20px;
+}
+
+  }
+}

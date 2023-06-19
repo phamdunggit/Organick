@@ -1,0 +1,102 @@
+.carousel-banner-wrapper {
+  width: 100%;
+  aspect-ratio: 1920/998;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 13%;
+}
+@media screen and (max-width: 1400px) {
+  .carousel-banner-wrapper {
+    padding: 70px 8%;
+  }
+}
+
+.carousel-banner-content {
+  width: 100%;
+}
+.carousel-banner-content .heading {
+  max-width: 530px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 800;
+  font-size: clamp(2.5rem, 1.7549rem + 2.1834vw, 4.375rem);
+  line-height: 131%;
+  /* color: #274c5b; */
+  margin-bottom: 23px;
+}
+.carousel-banner-content span {
+  font-family: "Yellowtail";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 49px;
+  margin-bottom: 8px;
+}
+.carousel-banner-content .banner-btn {
+  display: block;
+  max-width: 220px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  color: #274c5b;
+  text-decoration: none;
+  background: #efd372;
+  padding: 28px 39px;
+  border-radius: 16px;
+}
+
+.carousel-caption a img {
+  width: 19px;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+  position: absolute;
+  top: 50%;
+  bottom: 0;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 5%;
+  height: 10%;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+  background: #efd372 !important;
+  border: 0;
+  opacity: 0.5;
+  -webkit-transition: opacity 0.15s ease;
+  transition: opacity 0.15s ease;
+  border-radius: 15%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+.carousel-control-next:focus,
+.carousel-control-next:hover,
+.carousel-control-prev:focus,
+.carousel-control-prev:hover {
+  color: #fff;
+  text-decoration: none;
+  outline: 0;
+  opacity: 0.9;
+  height: 10%;
+}
