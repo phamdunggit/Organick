@@ -32,6 +32,9 @@ wp-config.php
 # Log files
 *.log
 
+#plugins foder
+/wp-content/plugins/
+
 # htaccess
 /.htaccess
 
