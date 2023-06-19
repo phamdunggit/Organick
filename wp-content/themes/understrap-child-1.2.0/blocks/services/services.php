@@ -9,13 +9,13 @@ $explomore_link= get_field('explomore_link');
 // var_dump($services_column_1);
 // echo '</pre>';
 ?>
-<div class="services-container" style="background-image: url(<?php echo $image['url'] ?>);">
+<div class="services-container">
     <div class="services-heading">
         <span class="sub-heading"><?php echo $sub_heading ?></span>
         <h2 class="heading"><?php echo $heading ?></h2>
     </div>
-    <div class="row services-container-row">
-        <div class="col-md-12 col-lg-4 services-column-1">
+    <div class="services-wrapper">
+        <div class="services-column-1">
             <div class="services">
                 <?php if (!$services_column_1) : else :
                     foreach ($services_column_1 as $item) {
@@ -30,12 +30,11 @@ $explomore_link= get_field('explomore_link');
                 <?php }
                 endif; ?>
             </div>
-            <div class="icon"></div>
         </div>
-        <div class="col-md-12 col-lg-4 service-image">
+        <div class="service-image">
             <img src="<?php echo $image['url'] ?>" alt="">
         </div>
-        <div class="col-md-12 col-lg-4 services-column-2">
+        <div class="services-column-2">
             <div class="services">
                 <?php if (!$services_column_2) : else :
                     foreach ($services_column_2 as $item) {

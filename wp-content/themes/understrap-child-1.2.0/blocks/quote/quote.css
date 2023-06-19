@@ -1,0 +1,21 @@
+.quote-container {
+  width: 100%;
+  padding: 69px 59px;
+  margin: 50px 0;
+  background: #f1edea;
+  border-radius: 30px;
+}
+@media screen and (max-width: 768px) {
+  .quote-container {
+    padding: 30px;
+  }
+}
+.quote-container .quote {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 165.4%;
+  text-align: center;
+  color: #274c5b;
+}

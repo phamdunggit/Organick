@@ -90,15 +90,16 @@
     }
 }
 .place-order-btn{
-    width: 160px;
-    height: 60px;
-    font-family: "Roboto";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
-    color: #ffffff;
-    background: #274c5b;
-    border-radius: 16px;
+  align-self: end;
+  border-radius: 28px !important;
+    height: 55px !important;
+    font-family: "Roboto" !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    font-size: 20px !important;
+    color: #ffffff !important;
+    background: #274c5b !important;
+    border-radius: 28px !important;
     border: none;
 }
 .ppcp-cancel{
@@ -114,6 +115,11 @@
 }
 .woocommerce-order{
     margin: 100px 13%;
+    h1.thank-you {
+      @include h1;
+      color: $primary-color;
+      text-align: center;
+    }
 }
 .woocommerce-thankyou-order-received{
     font-family: "Open Sans";
@@ -194,4 +200,27 @@
 }
 .additional-container{
   margin-bottom: 30px;
+}
+.woocommerce-terms-and-conditions-wrapper{
+  .woocommerce-privacy-policy-text {
+    margin: 0 !important;
+    width: 100% !important;
+    text-align: center;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 165.4%;
+    color: #525c60;
+    margin-bottom: 30px !important;
+}
+}
+.place-order{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+}
+.wc-ppcp-checkout-container{
+  align-self: end;
 }

@@ -20,11 +20,8 @@
   .banner-title {
     // padding: 0 184px;
     text-align: center;
-    font-family: "Roboto";
-    font-style: normal;
-    font-weight: 800;
-    font-size: clamp(2.1875rem, 1.3182rem + 2.5473vw, 4.375rem);
-    color: #274c5b;
+    @include h1;
+    color: $primary-color;
     // @media screen and (max-width: 567px){
     //   font-size: 40px;
     // }

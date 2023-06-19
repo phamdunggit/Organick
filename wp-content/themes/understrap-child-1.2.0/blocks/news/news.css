@@ -2,7 +2,7 @@
   background: #ffffff;
   width: 100%;
   padding: 0 13%;
-  margin-top: 177px;
+  margin-top: 132px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -35,6 +35,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-bottom: 45px;
 }
 @media screen and (max-width: 992px) {
   .news-top {
@@ -57,7 +58,7 @@
     width: 100%;
   }
 }
-.news-heading h2 {
+.news-heading span {
   font-family: "Yellowtail";
   font-style: normal;
   font-weight: 400;
@@ -65,12 +66,11 @@
   color: #7eb693;
   margin: 0;
 }
-.news-heading p {
+.news-heading h2 {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 800;
-  font-size: 50px;
-  line-height: 59px;
+  font-size: clamp(2.5rem, 2.2516rem + 0.7278vw, 3.125rem);
   color: #274c5b;
   margin: 0;
 }

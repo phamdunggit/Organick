@@ -63,6 +63,8 @@
 .woocommerce .quantity .qty {
   width: 100%;
   text-align: center;
+  padding: 0 !important;
+  
   @media screen and (max-width: 768px) {
     text-align: start;
     width: 100%;

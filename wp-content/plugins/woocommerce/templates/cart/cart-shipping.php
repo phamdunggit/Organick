@@ -44,7 +44,7 @@ $calculator_text          = '';
 				<?php endforeach; ?>
 			</ul>
 			<?php if ( is_cart() ) : ?>
-				<!-- <p class="woocommerce-shipping-destination">
+				<p class="woocommerce-shipping-destination">
 					<?php
 					if ( $formatted_destination ) {
 						// Translators: $s shipping destination.
@@ -54,7 +54,7 @@ $calculator_text          = '';
 						echo wp_kses_post( apply_filters( 'woocommerce_shipping_estimate_html', __( 'Shipping options will be updated during checkout.', 'woocommerce' ) ) );
 					}
 					?>
-				</p> -->
+				</p>
 			<?php endif; ?>
 			<?php
 		elseif ( ! $has_calculated_shipping || ! $formatted_destination ) :

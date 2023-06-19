@@ -1,3 +1,5 @@
+@import '../../assets/scss/genaral/mixin';
+@import '../../assets/scss/genaral/variables';
 .best-seller-wrapper {
   width: 100%;
   background: #274c5b;
@@ -34,7 +36,7 @@
     align-items: center;
   }
 }
-.best-seller-title h2 {
+.best-seller-title span {
   font-family: "Yellowtail";
   font-style: normal;
   font-weight: 400;
@@ -45,15 +47,9 @@
   }
   
 }
-.best-seller-title p {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 800;
-  font-size: 50px;
+.best-seller-title h2 {
+  @include h2;
   color: #ffffff;
-  @media screen and (min-width: 576px) {
-    font-size: 35px;
-  }
 }
 .view-all-btn {
   font-family: "Roboto";

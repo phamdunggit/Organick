@@ -30,27 +30,27 @@ $orderby_query = (get_query_var('orderby')) ? get_query_var('orderby') : "releva
 $paged = (get_query_var('pg')) ? get_query_var('pg') : 1;
 switch ($orderby_query) {
     case "relevance":
-        $sort_by="relevance";
+        $sort_by = "relevance";
         $metakey = "";
         $order = "desc";
         break;
     case "total_sales":
-        $sort_by="meta_value_num";
+        $sort_by = "meta_value_num";
         $metakey = "total_sales";
         $order = "desc";
         break;
     case "product_date":
-        $sort_by="date";
+        $sort_by = "date";
         $metakey = "";
         $order = "desc";
         break;
     case "price_asc":
-        $sort_by="meta_value_num";
+        $sort_by = "meta_value_num";
         $metakey = "_price";
         $order = "asc";
         break;
     case "price-desc":
-        $sort_by="meta_value_num";
+        $sort_by = "meta_value_num";
         $metakey = "_price";
         $order = "desc";
         break;
@@ -61,7 +61,7 @@ switch ($orderby_query) {
 // var_dump($paged);
 $params = array(
     'post_type'      => $posttype,
-    'limit' => 4,
+    'limit' => 12,
     's' => $search,
     'meta_key' => $metakey,
     'orderby' => $sort_by,
@@ -71,9 +71,7 @@ $params = array(
     // 'page'=> 2,
 );
 $products = wc_get_products($params);
-// echo "<pre>";
-// var_dump($products);
-// echo "</pre>";
+
 ?>
 
 <div class="wrapper" id="page-wrapper">
@@ -85,6 +83,12 @@ $products = wc_get_products($params);
         </div>
     <?php endif; ?>
     <div class="search-container">
+        <?php if(preg_match('/^\s+$/', $search)!=0|| strlen($search)==0 || count($products->products)==0): ?>
+            <div class="search-heading">
+            <h1>No result for: “<?php echo $search ?>”</h1>
+        </div>
+
+       <?php else: ?>
         <div class="search-heading">
             <h1>Search results for: “<?php echo $search ?>”</h1>
         </div>
@@ -109,56 +113,66 @@ $products = wc_get_products($params);
 
             </form>
         </div>
-            <div class="product-wrapper">
+        <div class="product-wrapper">
 
 
-                <?php
-                //display products
-                foreach ($products->products as $item) {
-                    $data = $item->get_data();
-                ?>
-                    <div class="product">
-                        <a class="product-category" href="<?php echo get_category_link($data['category_ids']['0']) ?>"><?php echo get_term($data['category_ids']['0'])->name ?></a>
-                        <div class="product-image">
-                            <a href="<?php echo get_post_permalink($item->id) ?>">
-                                <img src="<?php echo get_the_post_thumbnail_url($item->id) ?>" alt="" srcset="">
-                            </a>
-                        </div>
-                        <div class="product-info">
+            <?php
+            //display products
+            foreach ($products->products as $item) {
+                $data = $item->get_data();
+            ?>
+                <div class="product">
+                    <a class="product-category" href="<?php echo get_category_link($data['category_ids']['0']) ?>"><?php echo get_term($data['category_ids']['0'])->name ?></a>
+                    <div class="product-image">
+                        <a href="<?php echo get_post_permalink($item->id) ?>">
+                            <img src="<?php echo get_the_post_thumbnail_url($item->id) ?>" alt="" srcset="">
+                        </a>
+                    </div>
+                    <div class="product-info">
+                        <?php if (!get_field('net_weight', $item->id)) : ?>
                             <h4 class="product-name"><a href="<?php echo get_post_permalink($item->id) ?>"><?php echo $data['name'] ?></a></h4>
-                            <div class="price">
-                                <span class="origin-price"><?php if(!$data['regular_price']): else: echo get_woocommerce_currency_symbol()." ".round($data['regular_price'], 2); endif ?></span>
-                                <span class="sale-price"><?php if(!$data['sale_price']): else: echo get_woocommerce_currency_symbol()." ". round($data['sale_price'], 2); endif;  ?></span>
-                            </div>
+                        <?php else : ?>
+                            <h4 class="product-name"><a href="<?php echo get_post_permalink($item->id) ?>"><?php echo $data['name'] . " - " . get_field('net_weight', $item->id) ?></a></h4>
+                        <?php endif; ?>
+                        <div class="price">
+                            <?php if (!$data['sale_price']) : else : ?>
+                                <span class="origin-price"><?php if (!$data['regular_price']) : else : echo get_woocommerce_currency_symbol() . " " . round($data['regular_price'], 2);
+                                                            endif ?></span>
+                            <?php endif; ?>
+                            <span class="sale-price"><?php if (!$data['sale_price']) : echo get_woocommerce_currency_symbol() . " " . round($data['regular_price'], 2);
+                                                        else : echo get_woocommerce_currency_symbol() . " " . round($data['sale_price'], 2);
+                                                        endif;  ?></span>
                         </div>
                     </div>
-                <?php } ?>
-            </div>
-            <?php
-            $big = 999999999;  // need an unlikely integer
-            ?>
-            <div class="pagination">
-                <?php
-                echo paginate_links(array(
-                    // 'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
-                    'format'        =>  '?pg=%#%',
-                    'current' => $paged,
-                    'total' => $products->max_num_pages,
-                    'prev_text' => '<i class="fa fa-chevron-left" aria-hidden="true"></i>',
-                    'next_text' => '<i class="fa fa-chevron-right" aria-hidden="true"></i>'
-                ));
-                wp_reset_postdata();
-                ?>
-
-            </div>
+                </div>
+            <?php } ?>
         </div>
-    </div>
-
         <?php
-        get_template_part('global-templates/newsletter');
+        $big = 999999999;  // need an unlikely integer
         ?>
+        <div class="pagination">
+            <?php
+            echo paginate_links(array(
+                // 'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+                'format'        =>  '?pg=%#%',
+                'current' => $paged,
+                'total' => $products->max_num_pages,
+                'prev_text' => '<i class="fa fa-chevron-left" aria-hidden="true"></i>',
+                'next_text' => '<i class="fa fa-chevron-right" aria-hidden="true"></i>'
+            ));
+            wp_reset_postdata();
+            ?>
 
+        </div>
+        <?php endif; ?>
     </div>
+</div>
 
-    <?php
-    get_footer();
+<?php
+get_template_part('global-templates/newsletter');
+?>
+
+</div>
+
+<?php
+get_footer();

@@ -86,17 +86,11 @@
   font-family: "Roboto";
   font-style: normal;
   font-weight: 800;
-  font-size: 50px;
+  font-size: clamp(2.5rem, 2.2516rem + 0.7278vw, 3.125rem);
   color: #274c5b;
   margin-bottom: 36px;
   max-width: 623px;
   line-height: 59px;
-}
-@media screen and (max-width: 568px) {
-  .wwa-sub-heading {
-    font-size: 40px;
-    line-height: 43px;
-  }
 }
 
 .wwa-list {

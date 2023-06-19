@@ -1,3 +1,5 @@
+@import '../../assets/scss/genaral/mixin';
+@import '../../assets/scss/genaral/variables';
 .about-image {
   padding-top: 86px;
   padding-right: 0;
@@ -42,12 +44,7 @@
 }
 .about-heading {
   max-width: 506px;
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 800;
-  font-size: 50px;
-  color: #274c5b;
-  line-height: 59px;
+  @include h2;
   margin-bottom: 14px;
 }
 .about-text {
@@ -65,7 +62,7 @@
   align-items: start;
   column-gap: 0px;
   row-gap: 30px;
-  margin-bottom: 73px;
+  margin-bottom: 46px;
   @media screen and (max-width: 1200px) {
     flex-direction: column;
   }
@@ -121,6 +118,7 @@
   }
 }
 .content-btn {
+  display: block;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
@@ -128,7 +126,10 @@
   line-height: 23px;
   color: #ffffff;
   padding: 28px 39px 29px;
+  width: 226px;
+height: 80px;
 
   background: #274c5b;
   border-radius: 16px;
+  text-align: center;
 }

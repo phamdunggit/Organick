@@ -1,3 +1,5 @@
+@import '../genaral/mixin';
+@import '../genaral/variables';
 .product {
     // max-width: 335px;
     // flex-basis: calc(100%/4);
@@ -18,11 +20,7 @@
     margin: 0;
   }
   .shop-heading {
-    font-family: "Roboto";
-    font-style: normal;
-    font-weight: 800;
-    font-size: 50px;
-    text-align: center;
+    @include h2;
     color: #274c5b;
     margin-bottom: 40px;
   }
@@ -48,7 +46,7 @@
   }
   .product-image img {
     aspect-ratio: 1;
-    width: 335px;
+    width: 335px !important;
     height: auto;
     -o-object-fit: cover;
     object-fit: cover;
@@ -63,7 +61,7 @@
     justify-content: center;
   }
   .product-name a {
-    word-wrap: break-word;
+    word-break: break-word;
     font-family: "Roboto";
     font-style: normal;
     font-weight: 600;
@@ -157,6 +155,7 @@
     }
   }
   .product-wrapper {
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     place-items: center;

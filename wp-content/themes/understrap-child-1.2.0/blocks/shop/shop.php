@@ -20,12 +20,12 @@ switch ($orderby_query) {
         $metakey="_price";
         $order="asc";
         break;
-    case "price-desc":
+    case "price_desc":
         $metakey="_price";
         $order="desc";
         break;
 }
-// var_dump($paged);
+// var_dump($orderby_query);
 
 // var_dump($metakey);
 // var_dump($order);
@@ -47,16 +47,17 @@ $navigation = get_field('navigation');
 $sub_heading = get_field('sub-heading');
 $heading = get_field('heading');
 // echo "<pre>";
-// var_dump($navigation);
-// var_dump($catalog_orderby_options);
+// // var_dump($navigation);
+// // var_dump($catalog_orderby_options);
 // var_dump($products);
-// var_dump($products->products[0]->get_price());
-// var_dump(get_the_post_thumbnail_url( $products->posts['0']->ID, 'full' ));
-// var_dump( get_post_meta( $products->posts['0']->ID, '_price', true ));
-// var_dump($sort_by);
+// // var_dump($products->products[0]->get_price());
+// // var_dump(get_the_post_thumbnail_url( $products->posts['0']->ID, 'full' ));
+// // var_dump( get_post_meta( $products->posts['0']->ID, '_price', true ));
+// // var_dump($sort_by);
 // echo "</pre>";
 
 ?>
+
 <div class="shop-wrapper">
     
     <div class="shop-header">
@@ -78,7 +79,7 @@ $heading = get_field('heading');
                                                 else : endif; ?>>Latest</option>
                 <option value="price_asc" <?php if (get_query_var('orderby') == "price_asc") : echo "selected";
                                             else : endif; ?>>Price: low to high</option>
-                <option value="price-desc" <?php if (get_query_var('orderby') == "price-desc") : echo "selected";
+                <option value="price_desc" <?php if (get_query_var('orderby') == "price_desc") : echo "selected";
                                             else : endif; ?>>Price: high to low</option>
             </select>
             <input type="hidden" name="pg" value="1">
@@ -99,9 +100,15 @@ $heading = get_field('heading');
                     </a>
                 </div>
                 <div class="product-info">
+                    <?php if(!get_field('net_weight',$item->id)): ?>
                     <h4 class="product-name"><a href="<?php echo get_post_permalink($item->id) ?>"><?php echo $data['name'] ?></a></h4>
+                    <?php else: ?>
+                    <h4 class="product-name"><a href="<?php echo get_post_permalink($item->id) ?>"><?php echo $data['name']." - ".get_field('net_weight',$item->id) ?></a></h4>
+                    <?php endif; ?>
                     <div class="price">
+                        <?php if(!$data['sale_price']): else: ?>
                         <span class="origin-price"><?php if(!$data['regular_price']): else: echo get_woocommerce_currency_symbol()." ".round($data['regular_price'], 2); endif ?></span>
+                        <?php endif; ?>
                         <span class="sale-price"><?php if(!$data['sale_price']): echo get_woocommerce_currency_symbol()." ".round($data['regular_price'], 2); else: echo get_woocommerce_currency_symbol()." ". round($data['sale_price'], 2); endif;  ?></span>
                     </div>
                 </div>

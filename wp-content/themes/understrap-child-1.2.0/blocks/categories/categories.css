@@ -53,7 +53,7 @@
   font-family: "Roboto";
   font-style: normal;
   font-weight: 800;
-  font-size: 50px;
+  font-size: clamp(2.5rem, 2.2516rem + 0.7278vw, 3.125rem);
   color: #FFFFFF;
 }
 .cate-top span {

@@ -107,19 +107,28 @@
   border-radius: 16px !important;
   color: #ffffff !important;
   border: none !important;
+
 }
 .wpcf7-spinner {
-  visibility: hidden;
-  display: none;
-  background-color: #23282d;
-  opacity: 0.75;
-  width: 24px;
-  height: 24px;
-  border: none;
-  border-radius: 100%;
-  padding: 0;
-  margin: 0 24px;
-  position: relative;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  -webkit-animation: spin 0.8s linear infinite;
+  animation: spin 0.8s linear infinite;
+  display: block;
+  position: absolute;
+  left: 100%;
+  aspect-ratio: 1;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 .wpcf7 .wpcf7-not-valid-tip {
   position: absolute;
@@ -128,4 +137,25 @@
 .wpcf7 form.sent .wpcf7-response-output {
   position: absolute;
   border-color: #46b450;
+}
+.wpcf7 form.invalid .wpcf7-response-output, .wpcf7 form.unaccepted .wpcf7-response-output, .wpcf7 form.payment-required .wpcf7-response-output {
+  border-color: #ffb900;
+  position: absolute;
+}
+.wpcf7-form-control-wrap[data-name="subscribe-email"]{
+  position: relative;
+  width: auto;
+  .wpcf7-not-valid-tip{
+    bottom: -25px;
+  }
+  .wpcf7-response-output {
+    margin: 2em 0em 1em;
+    padding: 0.2em 1em;
+    border: 2px solid #00a0d2;
+    width: 100%;
+    position: absolute;
+}
+}
+.newsletter-form-container{
+  position: relative;
 }

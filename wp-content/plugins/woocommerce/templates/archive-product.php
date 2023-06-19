@@ -42,7 +42,6 @@ do_action( 'woocommerce_before_main_content' );
 	 * @hooked woocommerce_product_archive_description - 10
 	 */
 	do_action( 'woocommerce_archive_description' );
-	// echo "asdsadsa";
 	?>
 </header>
 <?php

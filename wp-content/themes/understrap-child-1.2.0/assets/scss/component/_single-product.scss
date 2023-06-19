@@ -71,6 +71,8 @@
     font-weight: 600;
     font-size: 40px;
     line-height: 47px;
+    word-wrap: break-word;
+    white-space: pre-wrap;
     /* identical to box height */
 
     color: #274c5b;
@@ -388,6 +390,20 @@
       margin-bottom: 40px;
     }
   }
+}
+.out-of-stock-btn{
+  background: #274c5b;
+  border-radius: 16px;
+  width: 213px;
+  height: 80px;
+  border: none;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  color: #ffffff;
+  cursor: not-allowed;
 }
 // input::-webkit-outer-spin-button,
 // input::-webkit-inner-spin-button {

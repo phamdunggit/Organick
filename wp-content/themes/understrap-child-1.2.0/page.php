@@ -36,6 +36,6 @@ $banner_image_background = get_field('banner_image_background');
     
     ?>
 </div>
-
+<?php  ?>
 <?php
 get_footer();

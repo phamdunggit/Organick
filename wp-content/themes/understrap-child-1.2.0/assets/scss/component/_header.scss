@@ -23,6 +23,11 @@ a {
   gap: 5px;
 }
 .search-form {
+  position: relative;
+}
+.search-form-wrapper {
+  z-index: 100;
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -294,10 +299,89 @@ a {
   /* margin-left: calc(-.5 * var(--bs-gutter-x)); */
 }
 .dropdown-menu[data-bs-popper] {
-    top: 100%;
-    left: -90px;
-    margin-top: var(--bs-dropdown-spacer);
+  top: 100%;
+  // left: -90px;
+  right: calc(100% - 60px);
+  left: auto !important;
+  margin-top: var(--bs-dropdown-spacer);
 }
-.avatar{
+.avatar {
   position: relative;
+}
+.search-results-wrapper {
+  position: absolute;
+  z-index: 99;
+  background-color: #ffffff;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-radius: 36px;
+  margin-right: 5px;
+  padding-top: 66px;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.26);
+  img {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+}
+.search-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.search-result {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  grid-template-columns: 3fr 7fr;
+  gap: 10px;
+  .result-product-image {
+    aspect-ratio: 1;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .result-product-info {
+    width: 100%;
+    .search-product-name {
+      @include h6;
+      color: $primary-color;
+      text-overflow: ellipsis;
+      text-decoration: none;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+      overflow: hidden;
+      word-break: break-word;
+    }
+  }
+}
+.no-result-found{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60px;
+  h6 {
+    @include h6;
+    color: $primary-color;
+  }
+}
+#username-dropdown{
+  width: 170px;
+  a {
+    text-overflow: ellipsis;
+    text-decoration: none;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    width: 100%;
+    word-break: break-all;
+  }
 }

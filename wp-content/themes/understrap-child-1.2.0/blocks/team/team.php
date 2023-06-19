@@ -59,7 +59,9 @@ endif;
                 </div>
             <?php } ?>
         </div>
-        <?php if ($pagination["pagination"]==1) : ?>
+        <?php 
+        if(!isset($pagination)): else : 
+        if ($pagination["pagination"]==1) : ?>
         <div class="pagination">
             <?php
             $big = 999999999;
@@ -77,6 +79,7 @@ endif;
     <?php
     else :
     endif;
+endif;
     ?>
         <div class="list-modal">
             <?php foreach ($team as $member) { ?>

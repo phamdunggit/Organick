@@ -49,6 +49,7 @@ do_action('woocommerce_before_cart'); ?>
 					// echo "<pre>";
 					// var_dump($_product);
 					// echo "</pre>";
+					$product_data=$_product->get_data();
 					if ($_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters('woocommerce_cart_item_visible', true, $cart_item, $cart_item_key)) {
 						$product_permalink = apply_filters('woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink($cart_item) : '', $cart_item, $cart_item_key);
 				?>
@@ -104,7 +105,10 @@ do_action('woocommerce_before_cart'); ?>
 
 							<td class="product-price-col" data-title="<?php esc_attr_e('Price', 'woocommerce'); ?>">
 								<?php
-								echo apply_filters('woocommerce_cart_item_price', WC()->cart->get_product_price($_product), $cart_item, $cart_item_key); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+								echo apply_filters('woocommerce_cart_item_price', WC()->cart->get_product_price($_product), $cart_item, $cart_item_key); 
+								// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+
+								// echo '<span>'.get_woocommerce_currency_symbol().round($product_data['price'],2).'</span>';
 								?>
 							</td>
 
@@ -117,9 +121,10 @@ do_action('woocommerce_before_cart'); ?>
 										array(
 											'input_name'   => "cart[{$cart_item_key}][qty]",
 											'input_value'  => $cart_item['quantity'],
-											'max_value'    => $_product->get_data()['sku'],
+											'max_value'    => $_product->get_data()['stock_quantity'],
 											'min_value'    => '0',
 											'product_name' => $_product->get_name(),
+											'size'=>"3"
 										),
 										$_product,
 										false
@@ -133,6 +138,7 @@ do_action('woocommerce_before_cart'); ?>
 							<td class="product-subtotal-col" data-title="<?php esc_attr_e('Subtotal', 'woocommerce'); ?>">
 								<?php
 								echo apply_filters('woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal($_product, $cart_item['quantity']), $cart_item, $cart_item_key); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+								// echo '<span>'.get_woocommerce_currency_symbol().round($product_data['price'],2)*$cart_item['quantity'].'</span>';
 								?>
 							</td>
 						</tr>

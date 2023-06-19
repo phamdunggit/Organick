@@ -124,3 +124,15 @@ label.error{
   margin-top: 5px;
   color: #ff0000;
 }
+.password-input-wrapper{
+  width: 100%;
+    position: relative;
+}
+#show-hide-password{
+  position: absolute;
+    right: 0;
+    top: 30px;
+    transform: translate(0, -50%);
+    margin-right: 10px;
+    cursor: pointer;
+}

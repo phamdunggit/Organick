@@ -59,7 +59,7 @@
   }
 }
 
-.best-seller-title h2 {
+.best-seller-title span {
   font-family: "Yellowtail";
   font-style: normal;
   font-weight: 400;
@@ -67,22 +67,17 @@
   color: #7eb693;
 }
 @media screen and (min-width: 576px) {
-  .best-seller-title h2 {
+  .best-seller-title span {
     font-size: 30px;
   }
 }
 
-.best-seller-title p {
+.best-seller-title h2 {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 800;
-  font-size: 50px;
+  font-size: clamp(2.5rem, 2.2516rem + 0.7278vw, 3.125rem);
   color: #ffffff;
-}
-@media screen and (min-width: 576px) {
-  .best-seller-title p {
-    font-size: 35px;
-  }
 }
 
 .view-all-btn {

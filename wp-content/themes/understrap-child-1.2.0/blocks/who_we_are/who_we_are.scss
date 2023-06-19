@@ -1,3 +1,5 @@
+@import '../../assets/scss/genaral/mixin';
+@import '../../assets/scss/genaral/variables';
 .wwa-wrapper {
   // height: 952px;
   background-repeat: no-repeat;
@@ -72,18 +74,11 @@
   
 }
 .wwa-sub-heading {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 800;
-  font-size: 50px;
+  @include h2;
   color: #274c5b;
   margin-bottom: 36px;
   max-width: 623px;
   line-height: 59px;
-  @media screen and (max-width: 568px) {
-    font-size: 40px;
-    line-height: 43px;
-  }
 }
 .wwa-list {
   list-style: none;
